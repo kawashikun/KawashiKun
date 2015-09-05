@@ -8,8 +8,8 @@
 
 import SpriteKit
 
-class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSceneProtcol {
-    var changeSceneDelegate:ChangeSceneProtcol!
+//class GameScene: SKScene, DegitalPadViewDelegate {
+class Stage1_1: SKScene,DegitalPadViewDelegate {
     let charName = "kawashikun"
     var stage:JSTileMap!
     var dPadVector:CGPoint!
@@ -23,10 +23,12 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     var motionStand:SKAction?
     var motionJump:SKAction?
     var motionRun:SKAction?
-    var movemask:UInt32 = 0x00000001
+    //    var dPad:DegitalPad = DegitalPad(frame: CGRect(x: 200, y: 200, width: 500, height: 300))
+    
+    //    var degitalPadScene:DegitalPadScene?
     
     override func didMoveToView(view: SKView) {
-        println("gamescene: \(self.frame)")
+        println("scene1_1: \(self.frame)")
         
         /* Setup your scene here */
         self.backgroundColor = UIColor.grayColor()
@@ -42,7 +44,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         world.addChild(camera)
         
         // create map
-        stage = JSTileMap(named: "ground.tmx")
+        stage = JSTileMap(named: "Stage1_1.tmx")
         stage.position = CGPoint(x: 0, y: 0)
         world.addChild(stage)
         
@@ -55,13 +57,17 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         motionRun = makeRunMotion()
         
         // create player
-        let char = makeKawasikun(CGPoint(x:self.frame.size.width *        0.2,y:self.frame.size.height * 0.5), mask: movemask)
+        let char = makeKawasikun(CGPoint(x:self.frame.size.width *        0.2,y:self.frame.size.height * 0.5), mask: 0)
         world.addChild(char)
         
         // create DPad
+        //        self.degitalPadScene = DegitalPadScene(size: self.frame.size)
+        //        self.degitalPadScene?.delegatePad = self
         dPadVector = CGPoint(x: 0, y: 0)
-        
-        self.physicsWorld.contactDelegate = self
+        //        self.addChild(self.degitalPadScene!)
+        //        world.addChild(degitalPadScene!)
+        //        self.addChild(self.dPad!)
+        //        dPad.delegate = self
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -70,19 +76,20 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             var player = world.childNodeWithName(charName)?
-
+            
             player?.runAction(SKAction.repeatActionForever(motionRun!))
         }
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         // パッド削除
+        //        self.dPad.removeFromParent()
         var player = world.childNodeWithName(charName)?
         
         player?.runAction(SKAction.repeatActionForever(motionStand!))
     }
-
-   
+    
+    
     /** キャラクター作成
     * 引数   : pos   初期位置
     *    	: mask  衝突判定マスク値
@@ -93,17 +100,29 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         /* キャラクター設定 */
         let charactor = SKSpriteNode(imageNamed: "stand-0.gif")
         var animationFramesFarmer:[SKTexture] = []
-
+        /*
+        for(var i = 0; i <= 1; i++)
+        {
+        var name = NSString(format: "stand-%i.gif", i)
+        var kawasikun = SKTexture(imageNamed: name)
+        animationFramesFarmer.append(kawasikun)
+        }
+        
+        charactor.xScale = 1.0
+        charactor.yScale = 1.0*/
         charactor.position = pos
         charactor.name = charName /* とりあえずファイル名をノードの識別子に設定 */
         
         /* キャラクター画像の横幅サイズを半径とした円形を判定部分に設定 */
+        //        charactor.physicsBody = SKPhysicsBody(circleOfRadius:charactor.size.width/2)
+        //        let charbody = SKPhysicsBody(texture: charactor, size: charactor.size)
         charactor.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "stand-0.gif"), size: charactor.size)
         charactor.physicsBody?.allowsRotation = false
         charactor.physicsBody?.contactTestBitMask = mask
         charactor.physicsBody?.friction = 1.0
         charactor.physicsBody?.restitution = 0.0
         
+        //        let action = SKAction.animateWithTextures(animationFramesFarmer,timePerFrame:0.1)
         let action = makeStandMotion()
         let endlessAction = SKAction.repeatActionForever(action)
         charactor.runAction(endlessAction)
@@ -200,12 +219,6 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
                     
                     //You now have a physics body on your floor tiles! :)
                 }
-                else if gid == 15 {
-                    let node = layerInfo.layer.tileAtCoord(point) //I fetched a node at that point created by JSTileMap
-                    node.physicsBody = SKPhysicsBody(rectangleOfSize: node.frame.size) //I added a physics body
-                    node.physicsBody?.dynamic = false
-                    node.physicsBody?.contactTestBitMask = movemask
-                }
             }
         }
     }
@@ -221,8 +234,8 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         }
         
         player!.position = CGPointMake(player!.position.x + vector.x * playerspeed,
-                                       player!.position.y - vector.y * playerjump)
-//                    println("\(player!.position)")
+            player!.position.y - vector.y * playerjump)
+        //                    println("\(player!.position)")
         // カメラの移動
         var camera = world.childNodeWithName(cameraName)?
         
@@ -239,25 +252,12 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         {
             player!.xScale = 1.0
         }
+        
+        //        player?.runAction(SKAction.repeatActionForever(motionRun!))
     }
     
     func setDegitalPadInfo(degitalPad: DegitalPadView) {
         let onTouch = degitalPad.onToutch
         dPadVector = degitalPad.inputVector
-    }
-    
-    func changeScene(sceneName: String) {
-        self.changeSceneDelegate.changeScene(sceneName)
-    }
-    
-    var change:Bool = true
-    
-    func didBeginContact(contact: SKPhysicsContact) {
-        /* contactTestBitMascが同じだったら */
-        if((contact.bodyA.contactTestBitMask == contact.bodyB.contactTestBitMask) && change == true)
-        {
-            changeScene("Stage1_1")
-            change = false
-        }
     }
 }
