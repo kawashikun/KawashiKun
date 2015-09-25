@@ -16,8 +16,6 @@ class DegitalPadView: SKView {
     
 	var padBase:SKShapeNode!		// アケコンのパッドのベース部分
 	var padHead:SKShapeNode!		// アケコンのパッドの上の部分(丸いとこ)
-//	var padBase:UIImageView?		// アケコンのパッドのベース部分
-//	var padHead:UIImageView?		// アケコンのパッドの上の部分(丸いとこ)
 	
 	var onToutch:Bool = false		// タッチされているかどうか
     var onToutchLast:Bool = false	// タッチされているかどうか
@@ -39,40 +37,22 @@ class DegitalPadView: SKView {
         // パッドのベース
         self.padBase = SKShapeNode(circleOfRadius:self.degitalPadRadius)		// radiusサイズでベースを描画
         self.padBase.fillColor = UIColor(red:0.3,green:0.3,blue:0.3,alpha:0.3)
-//        var base = UIImage(contentsOfFile: "base")
-//        self.padBase = UIImageView(image: base)
         //		self.padBase.fillColor = UIColor(red:0.3,green:0.3,blue:0.3,alpha:0.3)
         
         // パッドの上の部分
         self.padHead = SKShapeNode(circleOfRadius:self.degitalPadRadius+10.0)	// 少し大きく
         self.padHead.fillColor = UIColor(red:0.5,green:0.0,blue:0.0,alpha:0.3)
-//        var head = UIImage(contentsOfFile: "head")
-//        self.padHead = UIImageView(image: head)	// 少し大きく
-        //		self.padHead.fillColor = UIColor(red:0.5,green:0.0,blue:0.0,alpha:0.3)
         
         self.opaque = false
-//        let color = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         let color = UIColor.blackColor().colorWithAlphaComponent(0.0)
-//        let color = UIColor.whiteColor()
-//        let alpha = color.colorWithAlphaComponent(0.0)
         self.backgroundColor = color
-//        self.backgroundColor = SKColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         self.allowsTransparency = true
-        
-//        self.alpha = 0.1
         
         myScene = SKScene(size: self.frame.size)
         myScene.backgroundColor = color
-//        myScene.blendMode = SKBlendMode.Alpha
-//        myScene.alpha = 0.0
         self.presentScene(myScene)
         
-//        self.scene?.backgroundColor = SKColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        
         timerStart(0.01)
-        
-//        self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-//        self.alpha = 0.5
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -85,7 +65,6 @@ class DegitalPadView: SKView {
 
 	// タッチ開始
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//	override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 
 		/* Called when a touch begins */
 
@@ -99,12 +78,8 @@ class DegitalPadView: SKView {
 			self.inputPos = location
             
 			// パッドのベース
-//			self.padBase?.layer.position = CGPointMake(location.x,location.y)
-//			self.addSubview(self.padBase!)
 
 			// パッドの上の部分
-//			self.padHead?.layer.position = CGPointMake(location.x,location.y)
-//			self.addSubview(self.padBase!)
             self.basePos = location
 
             // パッドのベース
@@ -114,8 +89,6 @@ class DegitalPadView: SKView {
             // パッドの上の部分
             self.padHead.position = CGPointMake(location.x,self.frame.height - location.y)
             myScene.addChild(padHead)
-
-//            self.delegate?.setDegitalPadInfo(self)
         }
 
         self.delegate?.touchesBegan(touches, withEvent: event)
@@ -126,7 +99,6 @@ class DegitalPadView: SKView {
 
 	// ドラッグ処理
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//	override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
 		/* Called when a touch begins */
 		for touch: AnyObject in touches {
             let location = touch.locationInView(self)
@@ -147,35 +119,23 @@ class DegitalPadView: SKView {
 			}
 
 			// パッドの上の部分
-//			self.padHead?.layer.position = CGPointMake(self.basePos.x + self.inputPos.x,
-//												  self.basePos.y + self.inputPos.y)
 			self.padHead.position = CGPointMake(self.basePos.x + self.inputPos.x,
 												self.frame.height - self.basePos.y - self.inputPos.y)
-
-//            println("{1}\(self.basePos.x + self.inputPos.x),{2}\(self.frame.height - self.basePos.y - self.inputPos.y),{3}\(self.basePos),{4}\(self.inputPos)")
 
 			// 移動量を -1.0 ～ 1.0 に補正
 			self.inputVector.x = self.inputPos.x / self.degitalPadRadius
 			self.inputVector.y = self.inputPos.y / self.degitalPadRadius
 
             print("\(self.inputVector)")
-//            self.delegate?.setDegitalPadInfo(self)
 		}
 	}
 	
 	// タッチ終了通知
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//	override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         // 位置初期化
         self.inputVector = CGPoint(x: 0, y: 0)
 		
 		// パッド削除
-//		var subviews = self.subviews
-//		for subview in subviews {
-//			subview.removeFromSuperview()
-//		}
-//        self.delegate?.setDegitalPadInfo(self)
-
         self.padBase.removeFromParent()
         self.padHead.removeFromParent()
         
