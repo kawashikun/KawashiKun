@@ -4,8 +4,8 @@ import SpriteKit
 // プロトコル宣言
 protocol DegitalPadViewDelegate {
 	func setDegitalPadInfo(degitalPad:DegitalPadView)
-    func touchesBegan(touches: NSSet, withEvent event: UIEvent)
-    func touchesEnded(touches: NSSet, withEvent event: UIEvent)
+    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
+    func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?)
 }
 
 // クラス宣言
@@ -75,87 +75,97 @@ class DegitalPadView: SKView {
 //        self.alpha = 0.5
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
+
         super.init(coder: aDecoder)
+
     }
+
 	
+
 	// タッチ開始
-	override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//	override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+
 		/* Called when a touch begins */
+
 		for touch: AnyObject in touches {
 			let location = touch.locationInView(self)
-			
+
 			// タッチされている
 			self.onToutch = true
-			
+
 			// タッチ開始位置保存
 			self.inputPos = location
-			
+            
 			// パッドのベース
 //			self.padBase?.layer.position = CGPointMake(location.x,location.y)
 //			self.addSubview(self.padBase!)
-			
+
 			// パッドの上の部分
 //			self.padHead?.layer.position = CGPointMake(location.x,location.y)
 //			self.addSubview(self.padBase!)
-            
             self.basePos = location
-            
+
             // パッドのベース
             self.padBase.position = CGPointMake(location.x,self.frame.height - location.y)
             myScene.addChild(padBase)
-            
+
             // パッドの上の部分
             self.padHead.position = CGPointMake(location.x,self.frame.height - location.y)
             myScene.addChild(padHead)
 
 //            self.delegate?.setDegitalPadInfo(self)
         }
-        
+
         self.delegate?.touchesBegan(touches, withEvent: event)
+
 	}
+
 	
+
 	// ドラッグ処理
-	override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//	override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
 		/* Called when a touch begins */
 		for touch: AnyObject in touches {
             let location = touch.locationInView(self)
-			
 			// 入力位置
+
 			self.inputPos = CGPointMake(location.x - self.basePos.x,
 										location.y - self.basePos.y)
-			
+
 			// タッチ開始位置からの移動量算出
 			// 長辺の2乗 + 短辺の2乗 = 対角線の2乗
 			// 対角線 = root(長辺の2乗 + 短辺の2乗)
-			var length = sqrt(pow(self.inputPos.x, 2.0) + pow(self.inputPos.y, 2.0))
-			
+			let length = sqrt(pow(self.inputPos.x, 2.0) + pow(self.inputPos.y, 2.0))
+            
 			// パッドの半径より移動量が大きかったら補正
 			if(length > self.degitalPadRadius) {
 				inputPos.x = (inputPos.x / length) * self.degitalPadRadius;
 				inputPos.y = (inputPos.y / length) * self.degitalPadRadius;
 			}
-			
+
 			// パッドの上の部分
 //			self.padHead?.layer.position = CGPointMake(self.basePos.x + self.inputPos.x,
 //												  self.basePos.y + self.inputPos.y)
 			self.padHead.position = CGPointMake(self.basePos.x + self.inputPos.x,
 												self.frame.height - self.basePos.y - self.inputPos.y)
-			
+
 //            println("{1}\(self.basePos.x + self.inputPos.x),{2}\(self.frame.height - self.basePos.y - self.inputPos.y),{3}\(self.basePos),{4}\(self.inputPos)")
-            
+
 			// 移動量を -1.0 ～ 1.0 に補正
 			self.inputVector.x = self.inputPos.x / self.degitalPadRadius
 			self.inputVector.y = self.inputPos.y / self.degitalPadRadius
-            
-            println("\(self.inputVector)")
-            
+
+            print("\(self.inputVector)")
 //            self.delegate?.setDegitalPadInfo(self)
 		}
 	}
 	
 	// タッチ終了通知
-	override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//	override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         // 位置初期化
         self.inputVector = CGPoint(x: 0, y: 0)
 		

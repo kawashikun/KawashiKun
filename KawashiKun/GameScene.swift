@@ -26,7 +26,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     var movemask:UInt32 = 0x00000001
     
     override func didMoveToView(view: SKView) {
-        println("gamescene: \(self.frame)")
+        print("gamescene: \(self.frame)")
         
         /* Setup your scene here */
         self.backgroundColor = UIColor.grayColor()
@@ -37,7 +37,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         self.addChild(world)
         
         // camera settings
-        var camera = SKNode()
+        let camera = SKNode()
         camera.name = cameraName
         world.addChild(camera)
         
@@ -64,20 +64,22 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         self.physicsWorld.contactDelegate = self
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            var player = world.childNodeWithName(charName)?
+        for _ in touches {
+//            let location = touch.locationInNode(self)
+            let player = world.childNodeWithName(charName)
 
             player?.runAction(SKAction.repeatActionForever(motionRun!))
         }
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         // パッド削除
-        var player = world.childNodeWithName(charName)?
+        let player = world.childNodeWithName(charName)
         
         player?.runAction(SKAction.repeatActionForever(motionStand!))
     }
@@ -92,7 +94,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     {
         /* キャラクター設定 */
         let charactor = SKSpriteNode(imageNamed: "stand-0.gif")
-        var animationFramesFarmer:[SKTexture] = []
+//        var animationFramesFarmer:[SKTexture] = []
 
         charactor.position = pos
         charactor.name = charName /* とりあえずファイル名をノードの識別子に設定 */
@@ -123,8 +125,8 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         
         for(var i = 0; i <= 1; i++)
         {
-            var name = NSString(format: "stand-%i.gif", i)
-            var texture = SKTexture(imageNamed: name)
+            let name = NSString(format: "stand-%i.gif", i)
+            let texture = SKTexture(imageNamed: name as String)
             animationFramesFarmer.append(texture)
         }
         
@@ -148,8 +150,8 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         
         for(var i = 0; i <= 8; i++)
         {
-            var name = NSString(format: "jump-%i.gif", i)
-            var texture = SKTexture(imageNamed: name)
+            let name = NSString(format: "jump-%i.gif", i)
+            let texture = SKTexture(imageNamed: name as String)
             animationFramesFarmer.append(texture)
         }
         
@@ -173,8 +175,8 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         
         for(var i = 0; i <= 9; i++)
         {
-            var name = NSString(format: "run-%i.gif", i)
-            var texture = SKTexture(imageNamed: name)
+            let name = NSString(format: "run-%i.gif", i)
+            let texture = SKTexture(imageNamed: name as String)
             animationFramesFarmer.append(texture)
         }
         
@@ -189,7 +191,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     func addFloor() {
         for var a = 0; a < Int(stage.mapSize.width); a++ { //Go through every point across the tile map
             for var b = 0; b < Int(stage.mapSize.height); b++ { //Go through every point up the tile map
-                let layerInfo:TMXLayerInfo = stage.layers.firstObject as TMXLayerInfo //Get the first layer (you may want to pick another layer if you don't want to use the first one on the tile map)
+                let layerInfo:TMXLayerInfo = stage.layers.firstObject as! TMXLayerInfo //Get the first layer (you may want to pick another layer if you don't want to use the first one on the tile map)
                 let point = CGPoint(x: a, y: b) //Create a point with a and b
                 let gid = layerInfo.layer.tileGidAt(layerInfo.layer.pointForCoord(point)) //The gID is the ID of the tile. They start at 1 up the the amount of tiles in your tile set.
                 
@@ -211,7 +213,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     }
     
     override func update(currentTime: CFTimeInterval) {
-        var player = world.childNodeWithName(charName)?
+        let player = world.childNodeWithName(charName)
         var vector = (x:dPadVector.x,y:dPadVector.y)
         
         // 下に行き過ぎないように補正
@@ -224,7 +226,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
                                        player!.position.y - vector.y * playerjump)
 //                    println("\(player!.position)")
         // カメラの移動
-        var camera = world.childNodeWithName(cameraName)?
+        let camera = world.childNodeWithName(cameraName)
         
         if((self.frame.size.width / 2) < player!.position.x) {
             camera?.parent?.position = CGPointMake(-player!.position.x + CGRectGetMidX(self.frame), camera!.parent!.position.y)
@@ -242,7 +244,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     }
     
     func setDegitalPadInfo(degitalPad: DegitalPadView) {
-        let onTouch = degitalPad.onToutch
+//        let onTouch = degitalPad.onToutch
         dPadVector = degitalPad.inputVector
     }
     

@@ -51,10 +51,10 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     Cellが選択された際に呼び出される.
     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("Num: \(indexPath.row)")
-        println("Value: \(scenes[indexPath.row])")
+        print("Num: \(indexPath.row)")
+        print("Value: \(scenes[indexPath.row])")
         
-        presentGameView(scenes[indexPath.row] as String)
+        presentGameView(scenes[indexPath.row] as! String)
     }
     
     /*

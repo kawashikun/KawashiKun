@@ -17,7 +17,7 @@ class SceneViewController: UIViewController,ChangeViewProtcol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("viewcontroller: \(self.view.frame)")
+        print("viewcontroller: \(self.view.frame)")
     
         let gameView = GameView(frame: self.view.frame, sceneName: sceneName)
         gameView.changeViewDelegate = self
@@ -35,11 +35,11 @@ class SceneViewController: UIViewController,ChangeViewProtcol {
         return true
     }
     
-    override func supportedInterfaceOrientations() -> Int {
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+            return UIInterfaceOrientationMask.AllButUpsideDown
         } else {
-            return Int(UIInterfaceOrientationMask.All.rawValue)
+            return UIInterfaceOrientationMask.All
         }
     }
     

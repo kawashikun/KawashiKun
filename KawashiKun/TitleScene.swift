@@ -15,7 +15,7 @@ class TitleScene: SKScene,ChangeSceneProtcol {
     let button_resetscore = "RESET SCORE"
     
     override func didMoveToView(view: SKView) {
-        println("titlescene: \(self.frame)")
+        print("titlescene: \(self.frame)")
 
         // 背景色
         self.backgroundColor = UIColor.redColor()
@@ -37,14 +37,16 @@ class TitleScene: SKScene,ChangeSceneProtcol {
     }
     
     // 「Start」ラベルをタップしたら、GameSceneへ遷移させる。
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        let touch: AnyObject! = touches.anyObject()
-        let location = touch.locationInNode(self)
-        let touchedNode = self.nodeAtPoint(location)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        if let touch:UITouch = touches.first! {
+            let location = touch.locationInNode(self)
+            let touchedNode = self.nodeAtPoint(location)
         
-        if touchedNode.name != nil {
-            if touchedNode.name == button_start {
-                changeScene("GameScene")
+            if touchedNode.name != nil {
+                if touchedNode.name == button_start {
+                    changeScene("GameScene")
+                }
             }
         }
     }

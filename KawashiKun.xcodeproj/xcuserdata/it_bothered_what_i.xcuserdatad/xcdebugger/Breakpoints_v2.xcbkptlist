@@ -24,6 +24,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "KawashiKun.GameScene.cameraName.getter : Swift.String"
                   moduleName = "KawashiKun"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/it_bothered_what_i/WORK/study/swift/KawashiKun/KawashiKun/GameScene.swift"
                   timestampString = "448890813.202057"
                   startingColumnNumber = "9223372036854775807"
@@ -38,6 +39,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "KawashiKun.GameScene.init (KawashiKun.GameScene.Type)(size : C.CGSize) -&gt; KawashiKun.GameScene"
                   moduleName = "KawashiKun"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/it_bothered_what_i/WORK/study/swift/KawashiKun/KawashiKun/GameScene.swift"
                   timestampString = "448890813.202339"
                   startingColumnNumber = "9223372036854775807"
@@ -52,6 +54,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "KawashiKun.GameScene.init (KawashiKun.GameScene.Type)(coder : ObjectiveC.NSCoder) -&gt; Swift.Optional&lt;KawashiKun.GameScene&gt;"
                   moduleName = "KawashiKun"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/it_bothered_what_i/WORK/study/swift/KawashiKun/KawashiKun/GameScene.swift"
                   timestampString = "448890813.202752"
                   startingColumnNumber = "9223372036854775807"
@@ -61,38 +64,6 @@
                   offsetFromSymbolStart = "294">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "init(coder:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "touchesBegan(_:withEvent:)"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -148,6 +119,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[DPad touchesBegan:withEvent:]"
                   moduleName = "KawashiKun"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/it_bothered_what_i/WORK/study/swift/KawashiKun/KawashiKun/DPad/DPad.m"
                   timestampString = "448902635.759014"
                   startingColumnNumber = "9223372036854775807"
@@ -162,6 +134,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "__31-[DPad touchesBegan:withEvent:]_block_invoke"
                   moduleName = "KawashiKun"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/it_bothered_what_i/WORK/study/swift/KawashiKun/KawashiKun/DPad/DPad.m"
                   timestampString = "448902635.759241"
                   startingColumnNumber = "9223372036854775807"
@@ -180,11 +153,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "onUpdate(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -196,11 +169,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "onUpdate(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -212,44 +185,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463113679.383343"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "touchesBegan(_:withEvent:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "touchesBegan(_:withEvent:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "init(coder:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,11 +217,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "touchesEnded(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -292,11 +233,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "onUpdate(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -308,11 +249,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "touchesEnded(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -356,11 +297,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463113679.383343"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "setDegitalPadInfo(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -420,11 +361,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463113679.383343"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "touchesEnded(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -548,43 +489,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463113679.383343"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "touchesBegan(_:withEvent:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "touchesBegan(_:withEvent:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345629.351887"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "touchesBegan(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -674,6 +583,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "KawashiKun.TableViewController.tableView (KawashiKun.TableViewController)(ObjectiveC.UITableView, didSelectRowAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ()"
                   moduleName = "KawashiKun"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/it_bothered_what_i/WORK/study/swift/KawashiKun/TableViewController.swift"
                   timestampString = "463072417.260506"
                   startingColumnNumber = "9223372036854775807"
@@ -688,6 +598,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "reabstraction thunk helper from @callee_owned () -&gt; (@autoreleased ObjectiveC.NSString) to @callee_owned () -&gt; (@owned Swift.String)"
                   moduleName = "KawashiKun"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/it_bothered_what_i/WORK/study/swift/KawashiKun/TableViewController.swift"
                   timestampString = "463072417.261112"
                   startingColumnNumber = "9223372036854775807"
@@ -722,11 +633,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameView.swift"
-            timestampString = "463111801.905147"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "presentGameScene()"
             landmarkType = "5">
          </BreakpointContent>
@@ -738,11 +649,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameView.swift"
-            timestampString = "463111801.905147"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "presentGameScene()"
             landmarkType = "5">
          </BreakpointContent>
@@ -770,11 +681,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/TitleScene.swift"
-            timestampString = "463113679.383343"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "changeScene(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -818,11 +729,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463117193.842311"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "didBeginContact(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -834,11 +745,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463114051.293666"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "addFloor()"
             landmarkType = "5">
          </BreakpointContent>
@@ -850,11 +761,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463115451.869553"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "addFloor()"
             landmarkType = "5">
          </BreakpointContent>
@@ -866,11 +777,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463115453.046664"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "addFloor()"
             landmarkType = "5">
          </BreakpointContent>
@@ -882,11 +793,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463117193.842311"
+            timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "didBeginContact(_:)"
             landmarkType = "5">
          </BreakpointContent>

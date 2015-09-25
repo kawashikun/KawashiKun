@@ -19,13 +19,13 @@ class GameViewController: UIViewController {
 
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
-            let skView = self.view as SKView
+            let skView = self.view as! SKView
             skView.showsFPS = true
             skView.showsNodeCount = true
             
             skView.ignoresSiblingOrder = true
             
-            println("\(NSStringFromCGSize(skView.bounds.size))")
+            print("\(NSStringFromCGSize(skView.bounds.size))")
             scene.size = skView.bounds.size
             scene.scaleMode = .AspectFill
             
@@ -44,11 +44,11 @@ class GameViewController: UIViewController {
         return true
     }
 
-    override func supportedInterfaceOrientations() -> Int {
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+            return UIInterfaceOrientationMask.AllButUpsideDown
         } else {
-            return Int(UIInterfaceOrientationMask.All.rawValue)
+            return UIInterfaceOrientationMask.All
         }
     }
 

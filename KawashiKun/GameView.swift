@@ -15,22 +15,29 @@ protocol ChangeSceneProtcol {
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
-        if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
-            var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
-            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+        if let path = NSBundle.mainBundle().pathForResource(file as String, ofType: "sks") {
+            var sceneData = NSData()
+            do {
+                try sceneData = NSData(contentsOfFile: path, options:NSDataReadingOptions.DataReadingMappedIfSafe)
+                
+            } catch {
+                abort()
+            }
+//            var sceneData = NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: nil)!
+            let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
             switch file {
             case "TitleScene":
-                let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as TitleScene
+                let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! TitleScene
                 archiver.finishDecoding()
                 return scene
             case "GameScene":
-                let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as GameScene
+                let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
                 archiver.finishDecoding()
                 return scene
             case "Stage1_1":
-                let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as Stage1_1
+                let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! Stage1_1
                 archiver.finishDecoding()
                 return scene
             default:
@@ -53,14 +60,14 @@ class GameView:SKView,ChangeSceneProtcol {
     }
 */
     init(frame: CGRect, sceneName:String) {
-        println("gameview: \(frame)")
+        print("gameview: \(frame)")
 
         super.init(frame: frame)
 
         changeScene(sceneName)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -73,7 +80,7 @@ class GameView:SKView,ChangeSceneProtcol {
 
         //scene切り替え
         let trans = SKTransition.fadeWithDuration(0.5)
-        self.presentScene(newScene,transition:trans)
+        self.presentScene(newScene!,transition:trans)
     }
     
     func presentGameScene() {
@@ -88,7 +95,7 @@ class GameView:SKView,ChangeSceneProtcol {
 
         //scene切り替え
         let trans = SKTransition.fadeWithDuration(0.5)
-        self.presentScene(newScene,transition:trans)
+        self.presentScene(newScene!,transition:trans)
 
         self.addSubview(self.dPadView)
     }
@@ -105,7 +112,7 @@ class GameView:SKView,ChangeSceneProtcol {
         
         //scene切り替え
         let trans = SKTransition.fadeWithDuration(0.5)
-        self.presentScene(newScene,transition:trans)
+        self.presentScene(newScene!,transition:trans)
 
         
         self.addSubview(self.dPadView)
