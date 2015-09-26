@@ -65,11 +65,9 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
         for _ in touches {
-//            let location = touch.locationInNode(self)
             let player = world.childNodeWithName(charName)
 
             player?.runAction(SKAction.repeatActionForever(motionRun!))
@@ -77,7 +75,6 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         // パッド削除
         let player = world.childNodeWithName(charName)
         
@@ -94,7 +91,6 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     {
         /* キャラクター設定 */
         let charactor = SKSpriteNode(imageNamed: "stand-0.gif")
-//        var animationFramesFarmer:[SKTexture] = []
 
         charactor.position = pos
         charactor.name = charName /* とりあえずファイル名をノードの識別子に設定 */
@@ -224,7 +220,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         
         player!.position = CGPointMake(player!.position.x + vector.x * playerspeed,
                                        player!.position.y - vector.y * playerjump)
-//                    println("\(player!.position)")
+//                    print("\(player!.position)")
         // カメラの移動
         let camera = world.childNodeWithName(cameraName)
         
@@ -244,7 +240,6 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     }
     
     func setDegitalPadInfo(degitalPad: DegitalPadView) {
-//        let onTouch = degitalPad.onToutch
         dPadVector = degitalPad.inputVector
     }
     

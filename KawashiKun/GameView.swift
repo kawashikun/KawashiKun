@@ -23,7 +23,6 @@ extension SKNode {
             } catch {
                 abort()
             }
-//            var sceneData = NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: nil)!
             let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
@@ -53,12 +52,7 @@ class GameView:SKView,ChangeSceneProtcol {
     var changeViewDelegate:ChangeViewProtcol!
     var dPadView:DegitalPadView! = nil
     var dPadVactor:CGPoint! = nil
-/*
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        changeScene(sceneName)
-    }
-*/
+
     init(frame: CGRect, sceneName:String) {
         print("gameview: \(frame)")
 
@@ -76,8 +70,6 @@ class GameView:SKView,ChangeSceneProtcol {
         let newScene = TitleScene.unarchiveFromFile("TitleScene") as? TitleScene
         newScene?.changeSceneDelegate = self
 
-//        self.dPadView.delegate = newScene
-
         //scene切り替え
         let trans = SKTransition.fadeWithDuration(0.5)
         self.presentScene(newScene!,transition:trans)
@@ -86,7 +78,6 @@ class GameView:SKView,ChangeSceneProtcol {
     func presentGameScene() {
         // シーン作成
         let newScene = GameScene.unarchiveFromFile("GameScene") as? GameScene
-//        let newScene = GameScene()
         newScene?.changeSceneDelegate = self
 
         // パッド生成
@@ -103,8 +94,6 @@ class GameView:SKView,ChangeSceneProtcol {
     func presentStage1_1() {
         // シーン作成
         let newScene = Stage1_1.unarchiveFromFile("Stage1_1") as? Stage1_1
-        //        let newScene = GameScene()
-        //        newScene.changeSceneDelegate = self
         
         // パッド生成
         self.dPadView = DegitalPadView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))

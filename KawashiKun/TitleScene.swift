@@ -38,7 +38,6 @@ class TitleScene: SKScene,ChangeSceneProtcol {
     
     // 「Start」ラベルをタップしたら、GameSceneへ遷移させる。
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         if let touch:UITouch = touches.first! {
             let location = touch.locationInNode(self)
             let touchedNode = self.nodeAtPoint(location)

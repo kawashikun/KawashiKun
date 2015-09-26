@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "449665387.974375"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -184,38 +184,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KawashiKun/GameScene.swift"
-            timestampString = "464626475.003987"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "touchesBegan(_:withEvent:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KawashiKun/DegitalPadView.swift"
-            timestampString = "449345458.279328"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "init(frame:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "KawashiKun/DegitalPadView.swift"
             timestampString = "464626475.003987"
             startingColumnNumber = "9223372036854775807"
@@ -293,22 +261,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KawashiKun/GameScene.swift"
-            timestampString = "464626475.003987"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
-            landmarkName = "setDegitalPadInfo(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -361,7 +313,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "464626475.003987"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -489,7 +441,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "464626475.003987"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -505,7 +457,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463113679.383343"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -521,7 +473,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "463113679.383343"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -729,7 +681,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "464626475.003987"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "259"
@@ -745,7 +697,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "464626475.003987"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "206"
@@ -761,7 +713,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "464626475.003987"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
@@ -777,7 +729,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "464626475.003987"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
@@ -793,7 +745,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KawashiKun/GameScene.swift"
-            timestampString = "464626475.003987"
+            timestampString = "464922329.458442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"

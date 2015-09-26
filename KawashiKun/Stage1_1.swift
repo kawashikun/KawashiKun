@@ -23,9 +23,6 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
     var motionStand:SKAction?
     var motionJump:SKAction?
     var motionRun:SKAction?
-    //    var dPad:DegitalPad = DegitalPad(frame: CGRect(x: 200, y: 200, width: 500, height: 300))
-    
-    //    var degitalPadScene:DegitalPadScene?
     
     override func didMoveToView(view: SKView) {
         print("scene1_1: \(self.frame)")
@@ -61,21 +58,12 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
         world.addChild(char)
         
         // create DPad
-        //        self.degitalPadScene = DegitalPadScene(size: self.frame.size)
-        //        self.degitalPadScene?.delegatePad = self
         dPadVector = CGPoint(x: 0, y: 0)
-        //        self.addChild(self.degitalPadScene!)
-        //        world.addChild(degitalPadScene!)
-        //        self.addChild(self.dPad!)
-        //        dPad.delegate = self
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        
         for _ in touches {
-//            let location = touch.locationInNode(self)
             let player = world.childNodeWithName(charName)
             
             player?.runAction(SKAction.repeatActionForever(motionRun!))
@@ -83,9 +71,7 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         // パッド削除
-        //        self.dPad.removeFromParent()
         let player = world.childNodeWithName(charName)
         
         player?.runAction(SKAction.repeatActionForever(motionStand!))
@@ -101,30 +87,17 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
     {
         /* キャラクター設定 */
         let charactor = SKSpriteNode(imageNamed: "stand-0.gif")
-//        var animationFramesFarmer:[SKTexture] = []
-        /*
-        for(var i = 0; i <= 1; i++)
-        {
-        var name = NSString(format: "stand-%i.gif", i)
-        var kawasikun = SKTexture(imageNamed: name)
-        animationFramesFarmer.append(kawasikun)
-        }
-        
-        charactor.xScale = 1.0
-        charactor.yScale = 1.0*/
+
         charactor.position = pos
         charactor.name = charName /* とりあえずファイル名をノードの識別子に設定 */
         
         /* キャラクター画像の横幅サイズを半径とした円形を判定部分に設定 */
-        //        charactor.physicsBody = SKPhysicsBody(circleOfRadius:charactor.size.width/2)
-        //        let charbody = SKPhysicsBody(texture: charactor, size: charactor.size)
         charactor.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "stand-0.gif"), size: charactor.size)
         charactor.physicsBody?.allowsRotation = false
         charactor.physicsBody?.contactTestBitMask = mask
         charactor.physicsBody?.friction = 1.0
         charactor.physicsBody?.restitution = 0.0
         
-        //        let action = SKAction.animateWithTextures(animationFramesFarmer,timePerFrame:0.1)
         let action = makeStandMotion()
         let endlessAction = SKAction.repeatActionForever(action)
         charactor.runAction(endlessAction)
@@ -237,7 +210,6 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
         
         player!.position = CGPointMake(player!.position.x + vector.x * playerspeed,
             player!.position.y - vector.y * playerjump)
-        //                    println("\(player!.position)")
         // カメラの移動
         let camera = world.childNodeWithName(cameraName)
         
@@ -254,12 +226,9 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
         {
             player!.xScale = 1.0
         }
-        
-        //        player?.runAction(SKAction.repeatActionForever(motionRun!))
     }
     
     func setDegitalPadInfo(degitalPad: DegitalPadView) {
-//        let onTouch = degitalPad.onToutch
         dPadVector = degitalPad.inputVector
     }
 }
