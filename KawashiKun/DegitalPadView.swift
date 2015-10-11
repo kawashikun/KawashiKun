@@ -28,6 +28,9 @@ class DegitalPadView: SKView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        self.multipleTouchEnabled = false
+        
         // Initialization code
         // 半径を50くらいで適当に作成する
         self.degitalPadRadius = 30
@@ -82,6 +85,9 @@ class DegitalPadView: SKView {
             myScene.addChild(padHead)
         }
 
+        // タッチしただけの時は入力ベクトルを0に戻す
+        self.inputVector = CGPoint(x:0,y:0)
+        
         self.delegate?.touchesBegan(touches, withEvent: event)
 
 	}

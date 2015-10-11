@@ -13,6 +13,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
     let charName = "kawashikun"
     var stage:JSTileMap!
     var dPadVector:CGPoint!
+    var dPadTouch:Bool = false
     let playerspeed:CGFloat = 5.0       // 走る早さ
     let playerjump:CGFloat = 25.0       // ジャンプ力
     var lastUpdateTimeInterval:NSTimeInterval = 1
@@ -228,19 +229,23 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
             camera?.parent?.position = CGPointMake(-player!.position.x + CGRectGetMidX(self.frame), camera!.parent!.position.y)
         }
         
-        // キャラを反転
-        if(dPadVector.x < 0)
+        if(dPadTouch)
         {
-            player!.xScale = -1.0
-        }
-        else
-        {
-            player!.xScale = 1.0
+            // キャラを反転
+            if(dPadVector.x < 0)
+            {
+                player!.xScale = -1.0
+            }
+            else
+            {
+                player!.xScale = 1.0
+            }
         }
     }
     
     func setDegitalPadInfo(degitalPad: DegitalPadView) {
         dPadVector = degitalPad.inputVector
+        dPadTouch = degitalPad.onToutch
     }
     
     func changeScene(sceneName: String) {

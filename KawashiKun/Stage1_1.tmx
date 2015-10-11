@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="100" height="13" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="100" height="13" tilewidth="32" tileheight="32" nextobjectid="62">
  <tileset firstgid="1" name="ground" tilewidth="32" tileheight="32">
   <image source="platform_mapchip_ground.png" width="160" height="96"/>
  </tileset>
@@ -3915,4 +3915,7 @@
    <tile gid="0"/>
   </data>
  </layer>
+ <objectgroup name="boss">
+  <object id="61" gid="15" x="2368" y="352"/>
+ </objectgroup>
 </map>

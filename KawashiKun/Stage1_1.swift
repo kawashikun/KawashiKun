@@ -13,6 +13,7 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
     let charName = "kawashikun"
     var stage:JSTileMap!
     var dPadVector:CGPoint!
+    var dPadTouch:Bool = false
     let playerspeed:CGFloat = 5.0       // 走る早さ
     let playerjump:CGFloat = 25.0       // ジャンプ力
     var lastUpdateTimeInterval:NSTimeInterval = 1
@@ -65,7 +66,9 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
         /* Called when a touch begins */
         for _ in touches {
             let player = world.childNodeWithName(charName)
+            let way:Bool = (player?.xScale > 0.0) ? true : false
             
+            self.makeSquare((player?.position)!,way:way)
             player?.runAction(SKAction.repeatActionForever(motionRun!))
         }
     }
@@ -128,6 +131,31 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
         let action = SKAction.animateWithTextures(animationFramesFarmer,timePerFrame:0.1)
         
         return action
+    }
+    
+    /** 攻撃のnode作成
+    * 引数   ：pos nodeの位置
+    *       ：way  nodeを移動させる方向(true:右、false:左)
+    * 戻り値 ：
+    */
+    func makeSquare(pos:CGPoint,way:Bool)
+    {
+        // 飛んでく何か
+        let square = SKShapeNode(rectOfSize: CGSize(width: 1.0, height: 1.0))   // 1dotの四角
+        let move:CGFloat = way ? 100.0 : -100.0                                 // 移動量
+        
+        // 初期位置
+        square.position = pos
+        
+        // アクションを作成(四角移動→移動後nodeを消す)
+        let action = SKAction.moveTo(CGPoint(x:pos.x + move,y:pos.y), duration: 0.2)
+        let remove = SKAction.removeFromParent()
+        let sequence = SKAction.sequence([action,remove])
+        
+        // node登録
+        world.addChild(square)
+        // アクション登録
+        square.runAction(sequence)
     }
     
     /** ジャンプアニメーション作成
@@ -196,6 +224,15 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
                 }
             }
         }
+        
+        // オブジェクトグループの情報を取得する方法
+        let objInfo:TMXObjectGroup = stage.objectGroups.firstObject as! TMXObjectGroup
+        
+        let array = objInfo.objects as NSArray
+        let dic = array[0] as! NSDictionary
+//        print((array[0] as! NSDictionary)["x"]!)
+        let x = dic["x"]!
+        print(x)
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -217,18 +254,26 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
             camera?.parent?.position = CGPointMake(-player!.position.x + CGRectGetMidX(self.frame), camera!.parent!.position.y)
         }
         
-        // キャラを反転
-        if(dPadVector.x < 0)
+        // タッチされている時だけ処理
+        if(dPadTouch)
         {
-            player!.xScale = -1.0
-        }
-        else
-        {
-            player!.xScale = 1.0
+            // キャラを反転(0のときは何もしない)
+            if(dPadVector.x < 0)
+            {
+                player!.xScale = -1.0
+            }
+            else if(0 < dPadVector.x)
+            {
+                player!.xScale = 1.0
+            }
         }
     }
     
     func setDegitalPadInfo(degitalPad: DegitalPadView) {
+        // 入力ベクトル取得
         dPadVector = degitalPad.inputVector
+        
+        // タッチ状態を取得(true:タッチされている、false:タッチされていない)
+        dPadTouch = degitalPad.onToutch
     }
 }
