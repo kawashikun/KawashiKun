@@ -7,6 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3792E74E1BD68C9600F3462A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E74D1BD68C9600F3462A /* AVFoundation.framework */; };
+		3792E7501BD68CA200F3462A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E74F1BD68CA200F3462A /* Foundation.framework */; };
+		3792E7521BD68CAF00F3462A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E7511BD68CAF00F3462A /* UIKit.framework */; };
+		3792E7541BD68CBC00F3462A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E7531BD68CBC00F3462A /* CoreGraphics.framework */; };
+		3792E7561BD68CC400F3462A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E7551BD68CC400F3462A /* AudioToolbox.framework */; };
+		3792E7581BD68CD200F3462A /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E7571BD68CD200F3462A /* CoreAudio.framework */; };
+		3792E75A1BD68CD900F3462A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E7591BD68CD900F3462A /* OpenGLES.framework */; };
+		3792E75C1BD68CE300F3462A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E75B1BD68CE300F3462A /* QuartzCore.framework */; };
+		3792E7AF1BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7A61BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp */; settings = {ASSET_TAGS = (); }; };
+		3792E7B01BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7A81BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp */; settings = {ASSET_TAGS = (); }; };
+		3792E7B11BD68F1A00F3462A /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7AD1BD68F1A00F3462A /* stdafx.cpp */; settings = {ASSET_TAGS = (); }; };
+		3792E7BE1BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7B21BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp */; settings = {ASSET_TAGS = (); }; };
+		3792E7BF1BD68F2800F3462A /* AkFileLocationBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7B41BD68F2800F3462A /* AkFileLocationBase.cpp */; settings = {ASSET_TAGS = (); }; };
+		3792E7C01BD68F2800F3462A /* AkFilePackage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7B61BD68F2800F3462A /* AkFilePackage.cpp */; settings = {ASSET_TAGS = (); }; };
+		3792E7C11BD68F2800F3462A /* AkFilePackageLowLevelIO.inl in Resources */ = {isa = PBXBuildFile; fileRef = 3792E7B91BD68F2800F3462A /* AkFilePackageLowLevelIO.inl */; settings = {ASSET_TAGS = (); }; };
+		3792E7C21BD68F2800F3462A /* AkFilePackageLUT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7BA1BD68F2800F3462A /* AkFilePackageLUT.cpp */; settings = {ASSET_TAGS = (); }; };
+		3792E7C31BD68F2800F3462A /* AkMultipleFileLocation.inl in Resources */ = {isa = PBXBuildFile; fileRef = 3792E7BD1BD68F2800F3462A /* AkMultipleFileLocation.inl */; settings = {ASSET_TAGS = (); }; };
+		3792E7CA1BD68F6600F3462A /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7C41BD68F6600F3462A /* Platform.cpp */; settings = {ASSET_TAGS = (); }; };
+		3792E7CB1BD68F6600F3462A /* WwiseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7C71BD68F6600F3462A /* WwiseTest.cpp */; settings = {ASSET_TAGS = (); }; };
+		3792E7CC1BD68F6600F3462A /* WwiseTestObj.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7C81BD68F6600F3462A /* WwiseTestObj.mm */; settings = {ASSET_TAGS = (); }; };
+		37E77A211BDFD1DE00902AF0 /* BGM.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E779FE1BDFD1DE00902AF0 /* BGM.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A221BDFD1DE00902AF0 /* BGM.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E779FF1BDFD1DE00902AF0 /* BGM.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A231BDFD1DE00902AF0 /* Car.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A001BDFD1DE00902AF0 /* Car.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A241BDFD1DE00902AF0 /* Car.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A011BDFD1DE00902AF0 /* Car.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A251BDFD1DE00902AF0 /* Dirt.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A021BDFD1DE00902AF0 /* Dirt.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A261BDFD1DE00902AF0 /* Dirt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A031BDFD1DE00902AF0 /* Dirt.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A271BDFD1DE00902AF0 /* English(US) in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A041BDFD1DE00902AF0 /* English(US) */; settings = {ASSET_TAGS = (); }; };
+		37E77A281BDFD1DE00902AF0 /* ExternalSources.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A051BDFD1DE00902AF0 /* ExternalSources.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A291BDFD1DE00902AF0 /* ExternalSources.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A061BDFD1DE00902AF0 /* ExternalSources.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A2A1BDFD1DE00902AF0 /* Gravel.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A071BDFD1DE00902AF0 /* Gravel.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A2B1BDFD1DE00902AF0 /* Gravel.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A081BDFD1DE00902AF0 /* Gravel.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A2C1BDFD1DE00902AF0 /* Init.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A091BDFD1DE00902AF0 /* Init.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A2D1BDFD1DE00902AF0 /* Init.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0A1BDFD1DE00902AF0 /* Init.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A2E1BDFD1DE00902AF0 /* InteractiveMusic.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0B1BDFD1DE00902AF0 /* InteractiveMusic.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A2F1BDFD1DE00902AF0 /* InteractiveMusic.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0C1BDFD1DE00902AF0 /* InteractiveMusic.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A301BDFD1DE00902AF0 /* MarkerTest.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0D1BDFD1DE00902AF0 /* MarkerTest.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A311BDFD1DE00902AF0 /* MarkerTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0E1BDFD1DE00902AF0 /* MarkerTest.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A321BDFD1DE00902AF0 /* Metal.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0F1BDFD1DE00902AF0 /* Metal.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A331BDFD1DE00902AF0 /* Metal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A101BDFD1DE00902AF0 /* Metal.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A341BDFD1DE00902AF0 /* Microphone.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A111BDFD1DE00902AF0 /* Microphone.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A351BDFD1DE00902AF0 /* Microphone.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A121BDFD1DE00902AF0 /* Microphone.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A361BDFD1DE00902AF0 /* Motion.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A131BDFD1DE00902AF0 /* Motion.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A371BDFD1DE00902AF0 /* Motion.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A141BDFD1DE00902AF0 /* Motion.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A381BDFD1DE00902AF0 /* MusicCallbacks.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A151BDFD1DE00902AF0 /* MusicCallbacks.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A391BDFD1DE00902AF0 /* MusicCallbacks.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A161BDFD1DE00902AF0 /* MusicCallbacks.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A3A1BDFD1DE00902AF0 /* New_SoundBank.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A171BDFD1DE00902AF0 /* New_SoundBank.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A3B1BDFD1DE00902AF0 /* New_SoundBank.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A181BDFD1DE00902AF0 /* New_SoundBank.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A3C1BDFD1DE00902AF0 /* PluginInfo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A191BDFD1DE00902AF0 /* PluginInfo.xml */; settings = {ASSET_TAGS = (); }; };
+		37E77A3D1BDFD1DE00902AF0 /* Positioning_Demo.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1A1BDFD1DE00902AF0 /* Positioning_Demo.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A3E1BDFD1DE00902AF0 /* Positioning_Demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1B1BDFD1DE00902AF0 /* Positioning_Demo.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A3F1BDFD1DE00902AF0 /* SoundbanksInfo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1C1BDFD1DE00902AF0 /* SoundbanksInfo.xml */; settings = {ASSET_TAGS = (); }; };
+		37E77A401BDFD1DE00902AF0 /* TestRSX.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1D1BDFD1DE00902AF0 /* TestRSX.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A411BDFD1DE00902AF0 /* TestRSX.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1E1BDFD1DE00902AF0 /* TestRSX.txt */; settings = {ASSET_TAGS = (); }; };
+		37E77A421BDFD1DE00902AF0 /* Wood.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1F1BDFD1DE00902AF0 /* Wood.bnk */; settings = {ASSET_TAGS = (); }; };
+		37E77A431BDFD1DE00902AF0 /* Wood.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A201BDFD1DE00902AF0 /* Wood.txt */; settings = {ASSET_TAGS = (); }; };
 		4A0451EE1B9A835100236727 /* Stage1_1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4A0451ED1B9A835100236727 /* Stage1_1.tmx */; };
 		4A0451F01B9A839200236727 /* Stage1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0451EF1B9A839200236727 /* Stage1_1.swift */; };
 		4A0451F31B9A9AC900236727 /* Stage1_1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A0451F51B9A9AC900236727 /* Stage1_1.sks */; };
@@ -66,6 +121,76 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3792E74D1BD68C9600F3462A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3792E74F1BD68CA200F3462A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3792E7511BD68CAF00F3462A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3792E7531BD68CBC00F3462A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3792E7551BD68CC400F3462A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3792E7571BD68CD200F3462A /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		3792E7591BD68CD900F3462A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3792E75B1BD68CE300F3462A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3792E7A61BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AkDefaultIOHookBlocking.cpp; path = Wwise/fromSDK/samples/SoundEngine/POSIX/AkDefaultIOHookBlocking.cpp; sourceTree = "<group>"; };
+		3792E7A71BD68F1A00F3462A /* AkDefaultIOHookBlocking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkDefaultIOHookBlocking.h; path = Wwise/fromSDK/samples/SoundEngine/POSIX/AkDefaultIOHookBlocking.h; sourceTree = "<group>"; };
+		3792E7A81BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AkDefaultIOHookDeferred.cpp; path = Wwise/fromSDK/samples/SoundEngine/POSIX/AkDefaultIOHookDeferred.cpp; sourceTree = "<group>"; };
+		3792E7A91BD68F1A00F3462A /* AkDefaultIOHookDeferred.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkDefaultIOHookDeferred.h; path = Wwise/fromSDK/samples/SoundEngine/POSIX/AkDefaultIOHookDeferred.h; sourceTree = "<group>"; };
+		3792E7AA1BD68F1A00F3462A /* AkFileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkFileHelpers.h; path = Wwise/fromSDK/samples/SoundEngine/POSIX/AkFileHelpers.h; sourceTree = "<group>"; };
+		3792E7AB1BD68F1A00F3462A /* AkFilePackageLowLevelIOBlocking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkFilePackageLowLevelIOBlocking.h; path = Wwise/fromSDK/samples/SoundEngine/POSIX/AkFilePackageLowLevelIOBlocking.h; sourceTree = "<group>"; };
+		3792E7AC1BD68F1A00F3462A /* AkFilePackageLowLevelIODeferred.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkFilePackageLowLevelIODeferred.h; path = Wwise/fromSDK/samples/SoundEngine/POSIX/AkFilePackageLowLevelIODeferred.h; sourceTree = "<group>"; };
+		3792E7AD1BD68F1A00F3462A /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = Wwise/fromSDK/samples/SoundEngine/POSIX/stdafx.cpp; sourceTree = "<group>"; };
+		3792E7AE1BD68F1A00F3462A /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = Wwise/fromSDK/samples/SoundEngine/POSIX/stdafx.h; sourceTree = "<group>"; };
+		3792E7B21BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AkDefaultLowLevelIODispatcher.cpp; path = Wwise/fromSDK/samples/SoundEngine/Common/AkDefaultLowLevelIODispatcher.cpp; sourceTree = "<group>"; };
+		3792E7B31BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkDefaultLowLevelIODispatcher.h; path = Wwise/fromSDK/samples/SoundEngine/Common/AkDefaultLowLevelIODispatcher.h; sourceTree = "<group>"; };
+		3792E7B41BD68F2800F3462A /* AkFileLocationBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AkFileLocationBase.cpp; path = Wwise/fromSDK/samples/SoundEngine/Common/AkFileLocationBase.cpp; sourceTree = "<group>"; };
+		3792E7B51BD68F2800F3462A /* AkFileLocationBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkFileLocationBase.h; path = Wwise/fromSDK/samples/SoundEngine/Common/AkFileLocationBase.h; sourceTree = "<group>"; };
+		3792E7B61BD68F2800F3462A /* AkFilePackage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AkFilePackage.cpp; path = Wwise/fromSDK/samples/SoundEngine/Common/AkFilePackage.cpp; sourceTree = "<group>"; };
+		3792E7B71BD68F2800F3462A /* AkFilePackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkFilePackage.h; path = Wwise/fromSDK/samples/SoundEngine/Common/AkFilePackage.h; sourceTree = "<group>"; };
+		3792E7B81BD68F2800F3462A /* AkFilePackageLowLevelIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkFilePackageLowLevelIO.h; path = Wwise/fromSDK/samples/SoundEngine/Common/AkFilePackageLowLevelIO.h; sourceTree = "<group>"; };
+		3792E7B91BD68F2800F3462A /* AkFilePackageLowLevelIO.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AkFilePackageLowLevelIO.inl; path = Wwise/fromSDK/samples/SoundEngine/Common/AkFilePackageLowLevelIO.inl; sourceTree = "<group>"; };
+		3792E7BA1BD68F2800F3462A /* AkFilePackageLUT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AkFilePackageLUT.cpp; path = Wwise/fromSDK/samples/SoundEngine/Common/AkFilePackageLUT.cpp; sourceTree = "<group>"; };
+		3792E7BB1BD68F2800F3462A /* AkFilePackageLUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkFilePackageLUT.h; path = Wwise/fromSDK/samples/SoundEngine/Common/AkFilePackageLUT.h; sourceTree = "<group>"; };
+		3792E7BC1BD68F2800F3462A /* AkMultipleFileLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AkMultipleFileLocation.h; path = Wwise/fromSDK/samples/SoundEngine/Common/AkMultipleFileLocation.h; sourceTree = "<group>"; };
+		3792E7BD1BD68F2800F3462A /* AkMultipleFileLocation.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AkMultipleFileLocation.inl; path = Wwise/fromSDK/samples/SoundEngine/Common/AkMultipleFileLocation.inl; sourceTree = "<group>"; };
+		3792E7C41BD68F6600F3462A /* Platform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Platform.cpp; path = Wwise/Platform.cpp; sourceTree = "<group>"; };
+		3792E7C51BD68F6600F3462A /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Platform.h; path = Wwise/Platform.h; sourceTree = "<group>"; };
+		3792E7C61BD68F6600F3462A /* WwiseObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WwiseObj.h; path = Wwise/WwiseObj.h; sourceTree = "<group>"; };
+		3792E7C71BD68F6600F3462A /* WwiseTest.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = WwiseTest.cpp; path = Wwise/WwiseTest.cpp; sourceTree = "<group>"; };
+		3792E7C81BD68F6600F3462A /* WwiseTestObj.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WwiseTestObj.mm; path = Wwise/WwiseTestObj.mm; sourceTree = "<group>"; };
+		3792E7C91BD68F6600F3462A /* WwizeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WwizeTest.h; path = Wwise/WwizeTest.h; sourceTree = "<group>"; };
+		37E779FE1BDFD1DE00902AF0 /* BGM.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = BGM.bnk; path = Wwise/banks/BGM.bnk; sourceTree = "<group>"; };
+		37E779FF1BDFD1DE00902AF0 /* BGM.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BGM.txt; path = Wwise/banks/BGM.txt; sourceTree = "<group>"; };
+		37E77A001BDFD1DE00902AF0 /* Car.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = Car.bnk; path = Wwise/banks/Car.bnk; sourceTree = "<group>"; };
+		37E77A011BDFD1DE00902AF0 /* Car.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Car.txt; path = Wwise/banks/Car.txt; sourceTree = "<group>"; };
+		37E77A021BDFD1DE00902AF0 /* Dirt.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = Dirt.bnk; path = Wwise/banks/Dirt.bnk; sourceTree = "<group>"; };
+		37E77A031BDFD1DE00902AF0 /* Dirt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Dirt.txt; path = Wwise/banks/Dirt.txt; sourceTree = "<group>"; };
+		37E77A041BDFD1DE00902AF0 /* English(US) */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "English(US)"; path = "Wwise/banks/English(US)"; sourceTree = "<group>"; };
+		37E77A051BDFD1DE00902AF0 /* ExternalSources.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = ExternalSources.bnk; path = Wwise/banks/ExternalSources.bnk; sourceTree = "<group>"; };
+		37E77A061BDFD1DE00902AF0 /* ExternalSources.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ExternalSources.txt; path = Wwise/banks/ExternalSources.txt; sourceTree = "<group>"; };
+		37E77A071BDFD1DE00902AF0 /* Gravel.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = Gravel.bnk; path = Wwise/banks/Gravel.bnk; sourceTree = "<group>"; };
+		37E77A081BDFD1DE00902AF0 /* Gravel.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gravel.txt; path = Wwise/banks/Gravel.txt; sourceTree = "<group>"; };
+		37E77A091BDFD1DE00902AF0 /* Init.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = Init.bnk; path = Wwise/banks/Init.bnk; sourceTree = "<group>"; };
+		37E77A0A1BDFD1DE00902AF0 /* Init.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Init.txt; path = Wwise/banks/Init.txt; sourceTree = "<group>"; };
+		37E77A0B1BDFD1DE00902AF0 /* InteractiveMusic.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = InteractiveMusic.bnk; path = Wwise/banks/InteractiveMusic.bnk; sourceTree = "<group>"; };
+		37E77A0C1BDFD1DE00902AF0 /* InteractiveMusic.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = InteractiveMusic.txt; path = Wwise/banks/InteractiveMusic.txt; sourceTree = "<group>"; };
+		37E77A0D1BDFD1DE00902AF0 /* MarkerTest.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = MarkerTest.bnk; path = Wwise/banks/MarkerTest.bnk; sourceTree = "<group>"; };
+		37E77A0E1BDFD1DE00902AF0 /* MarkerTest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MarkerTest.txt; path = Wwise/banks/MarkerTest.txt; sourceTree = "<group>"; };
+		37E77A0F1BDFD1DE00902AF0 /* Metal.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = Metal.bnk; path = Wwise/banks/Metal.bnk; sourceTree = "<group>"; };
+		37E77A101BDFD1DE00902AF0 /* Metal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Metal.txt; path = Wwise/banks/Metal.txt; sourceTree = "<group>"; };
+		37E77A111BDFD1DE00902AF0 /* Microphone.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = Microphone.bnk; path = Wwise/banks/Microphone.bnk; sourceTree = "<group>"; };
+		37E77A121BDFD1DE00902AF0 /* Microphone.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Microphone.txt; path = Wwise/banks/Microphone.txt; sourceTree = "<group>"; };
+		37E77A131BDFD1DE00902AF0 /* Motion.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = Motion.bnk; path = Wwise/banks/Motion.bnk; sourceTree = "<group>"; };
+		37E77A141BDFD1DE00902AF0 /* Motion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Motion.txt; path = Wwise/banks/Motion.txt; sourceTree = "<group>"; };
+		37E77A151BDFD1DE00902AF0 /* MusicCallbacks.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = MusicCallbacks.bnk; path = Wwise/banks/MusicCallbacks.bnk; sourceTree = "<group>"; };
+		37E77A161BDFD1DE00902AF0 /* MusicCallbacks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MusicCallbacks.txt; path = Wwise/banks/MusicCallbacks.txt; sourceTree = "<group>"; };
+		37E77A171BDFD1DE00902AF0 /* New_SoundBank.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = New_SoundBank.bnk; path = Wwise/banks/New_SoundBank.bnk; sourceTree = "<group>"; };
+		37E77A181BDFD1DE00902AF0 /* New_SoundBank.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = New_SoundBank.txt; path = Wwise/banks/New_SoundBank.txt; sourceTree = "<group>"; };
+		37E77A191BDFD1DE00902AF0 /* PluginInfo.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PluginInfo.xml; path = Wwise/banks/PluginInfo.xml; sourceTree = "<group>"; };
+		37E77A1A1BDFD1DE00902AF0 /* Positioning_Demo.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = Positioning_Demo.bnk; path = Wwise/banks/Positioning_Demo.bnk; sourceTree = "<group>"; };
+		37E77A1B1BDFD1DE00902AF0 /* Positioning_Demo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Positioning_Demo.txt; path = Wwise/banks/Positioning_Demo.txt; sourceTree = "<group>"; };
+		37E77A1C1BDFD1DE00902AF0 /* SoundbanksInfo.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SoundbanksInfo.xml; path = Wwise/banks/SoundbanksInfo.xml; sourceTree = "<group>"; };
+		37E77A1D1BDFD1DE00902AF0 /* TestRSX.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = TestRSX.bnk; path = Wwise/banks/TestRSX.bnk; sourceTree = "<group>"; };
+		37E77A1E1BDFD1DE00902AF0 /* TestRSX.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TestRSX.txt; path = Wwise/banks/TestRSX.txt; sourceTree = "<group>"; };
+		37E77A1F1BDFD1DE00902AF0 /* Wood.bnk */ = {isa = PBXFileReference; lastKnownFileType = file; name = Wood.bnk; path = Wwise/banks/Wood.bnk; sourceTree = "<group>"; };
+		37E77A201BDFD1DE00902AF0 /* Wood.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Wood.txt; path = Wwise/banks/Wood.txt; sourceTree = "<group>"; };
 		4A0451ED1B9A835100236727 /* Stage1_1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Stage1_1.tmx; sourceTree = "<group>"; };
 		4A0451EF1B9A839200236727 /* Stage1_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stage1_1.swift; sourceTree = "<group>"; };
 		4A0451F41B9A9AC900236727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Base; path = Base.lproj/Stage1_1.sks; sourceTree = "<group>"; };
@@ -126,6 +251,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3792E7561BD68CC400F3462A /* AudioToolbox.framework in Frameworks */,
+				3792E74E1BD68C9600F3462A /* AVFoundation.framework in Frameworks */,
+				3792E7581BD68CD200F3462A /* CoreAudio.framework in Frameworks */,
+				3792E7541BD68CBC00F3462A /* CoreGraphics.framework in Frameworks */,
+				3792E7501BD68CA200F3462A /* Foundation.framework in Frameworks */,
+				3792E75A1BD68CD900F3462A /* OpenGLES.framework in Frameworks */,
+				3792E75C1BD68CE300F3462A /* QuartzCore.framework in Frameworks */,
+				3792E7521BD68CAF00F3462A /* UIKit.framework in Frameworks */,
 				4A07CAB31ABEC58D0091B85F /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +273,131 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3792E75D1BD68DEF00F3462A /* Wwise */ = {
+			isa = PBXGroup;
+			children = (
+				3792E75E1BD68E0000F3462A /* banks */,
+				3792E7611BD68E2F00F3462A /* RefFrameWork */,
+				3792E7601BD68E1E00F3462A /* Wwise-LowLevIO */,
+				3792E75F1BD68E0C00F3462A /* WwiseCtrl */,
+			);
+			name = Wwise;
+			sourceTree = "<group>";
+		};
+		3792E75E1BD68E0000F3462A /* banks */ = {
+			isa = PBXGroup;
+			children = (
+				37E779FE1BDFD1DE00902AF0 /* BGM.bnk */,
+				37E779FF1BDFD1DE00902AF0 /* BGM.txt */,
+				37E77A001BDFD1DE00902AF0 /* Car.bnk */,
+				37E77A011BDFD1DE00902AF0 /* Car.txt */,
+				37E77A021BDFD1DE00902AF0 /* Dirt.bnk */,
+				37E77A031BDFD1DE00902AF0 /* Dirt.txt */,
+				37E77A041BDFD1DE00902AF0 /* English(US) */,
+				37E77A051BDFD1DE00902AF0 /* ExternalSources.bnk */,
+				37E77A061BDFD1DE00902AF0 /* ExternalSources.txt */,
+				37E77A071BDFD1DE00902AF0 /* Gravel.bnk */,
+				37E77A081BDFD1DE00902AF0 /* Gravel.txt */,
+				37E77A091BDFD1DE00902AF0 /* Init.bnk */,
+				37E77A0A1BDFD1DE00902AF0 /* Init.txt */,
+				37E77A0B1BDFD1DE00902AF0 /* InteractiveMusic.bnk */,
+				37E77A0C1BDFD1DE00902AF0 /* InteractiveMusic.txt */,
+				37E77A0D1BDFD1DE00902AF0 /* MarkerTest.bnk */,
+				37E77A0E1BDFD1DE00902AF0 /* MarkerTest.txt */,
+				37E77A0F1BDFD1DE00902AF0 /* Metal.bnk */,
+				37E77A101BDFD1DE00902AF0 /* Metal.txt */,
+				37E77A111BDFD1DE00902AF0 /* Microphone.bnk */,
+				37E77A121BDFD1DE00902AF0 /* Microphone.txt */,
+				37E77A131BDFD1DE00902AF0 /* Motion.bnk */,
+				37E77A141BDFD1DE00902AF0 /* Motion.txt */,
+				37E77A151BDFD1DE00902AF0 /* MusicCallbacks.bnk */,
+				37E77A161BDFD1DE00902AF0 /* MusicCallbacks.txt */,
+				37E77A171BDFD1DE00902AF0 /* New_SoundBank.bnk */,
+				37E77A181BDFD1DE00902AF0 /* New_SoundBank.txt */,
+				37E77A191BDFD1DE00902AF0 /* PluginInfo.xml */,
+				37E77A1A1BDFD1DE00902AF0 /* Positioning_Demo.bnk */,
+				37E77A1B1BDFD1DE00902AF0 /* Positioning_Demo.txt */,
+				37E77A1C1BDFD1DE00902AF0 /* SoundbanksInfo.xml */,
+				37E77A1D1BDFD1DE00902AF0 /* TestRSX.bnk */,
+				37E77A1E1BDFD1DE00902AF0 /* TestRSX.txt */,
+				37E77A1F1BDFD1DE00902AF0 /* Wood.bnk */,
+				37E77A201BDFD1DE00902AF0 /* Wood.txt */,
+			);
+			name = banks;
+			sourceTree = "<group>";
+		};
+		3792E75F1BD68E0C00F3462A /* WwiseCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				3792E7C61BD68F6600F3462A /* WwiseObj.h */,
+				3792E7C81BD68F6600F3462A /* WwiseTestObj.mm */,
+				3792E7C91BD68F6600F3462A /* WwizeTest.h */,
+				3792E7C71BD68F6600F3462A /* WwiseTest.cpp */,
+				3792E7C51BD68F6600F3462A /* Platform.h */,
+				3792E7C41BD68F6600F3462A /* Platform.cpp */,
+			);
+			name = WwiseCtrl;
+			sourceTree = "<group>";
+		};
+		3792E7601BD68E1E00F3462A /* Wwise-LowLevIO */ = {
+			isa = PBXGroup;
+			children = (
+				3792E7A41BD68EC900F3462A /* Common */,
+				3792E7A51BD68ECF00F3462A /* POSIX */,
+			);
+			name = "Wwise-LowLevIO";
+			sourceTree = "<group>";
+		};
+		3792E7611BD68E2F00F3462A /* RefFrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				3792E74D1BD68C9600F3462A /* AVFoundation.framework */,
+				3792E7551BD68CC400F3462A /* AudioToolbox.framework */,
+				3792E75B1BD68CE300F3462A /* QuartzCore.framework */,
+				3792E7591BD68CD900F3462A /* OpenGLES.framework */,
+				3792E7571BD68CD200F3462A /* CoreAudio.framework */,
+				3792E7531BD68CBC00F3462A /* CoreGraphics.framework */,
+				3792E7511BD68CAF00F3462A /* UIKit.framework */,
+				3792E74F1BD68CA200F3462A /* Foundation.framework */,
+			);
+			name = RefFrameWork;
+			sourceTree = "<group>";
+		};
+		3792E7A41BD68EC900F3462A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3792E7B21BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp */,
+				3792E7B31BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.h */,
+				3792E7B41BD68F2800F3462A /* AkFileLocationBase.cpp */,
+				3792E7B51BD68F2800F3462A /* AkFileLocationBase.h */,
+				3792E7B61BD68F2800F3462A /* AkFilePackage.cpp */,
+				3792E7B71BD68F2800F3462A /* AkFilePackage.h */,
+				3792E7B81BD68F2800F3462A /* AkFilePackageLowLevelIO.h */,
+				3792E7B91BD68F2800F3462A /* AkFilePackageLowLevelIO.inl */,
+				3792E7BA1BD68F2800F3462A /* AkFilePackageLUT.cpp */,
+				3792E7BB1BD68F2800F3462A /* AkFilePackageLUT.h */,
+				3792E7BC1BD68F2800F3462A /* AkMultipleFileLocation.h */,
+				3792E7BD1BD68F2800F3462A /* AkMultipleFileLocation.inl */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		3792E7A51BD68ECF00F3462A /* POSIX */ = {
+			isa = PBXGroup;
+			children = (
+				3792E7A61BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp */,
+				3792E7A71BD68F1A00F3462A /* AkDefaultIOHookBlocking.h */,
+				3792E7A81BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp */,
+				3792E7A91BD68F1A00F3462A /* AkDefaultIOHookDeferred.h */,
+				3792E7AA1BD68F1A00F3462A /* AkFileHelpers.h */,
+				3792E7AB1BD68F1A00F3462A /* AkFilePackageLowLevelIOBlocking.h */,
+				3792E7AC1BD68F1A00F3462A /* AkFilePackageLowLevelIODeferred.h */,
+				3792E7AD1BD68F1A00F3462A /* stdafx.cpp */,
+				3792E7AE1BD68F1A00F3462A /* stdafx.h */,
+			);
+			name = POSIX;
+			sourceTree = "<group>";
+		};
 		4A07CA751ABEC3400091B85F = {
 			isa = PBXGroup;
 			children = (
@@ -178,11 +436,12 @@
 				4A07CA8E1ABEC3400091B85F /* Images.xcassets */,
 				4A07CA901ABEC3400091B85F /* LaunchScreen.xib */,
 				4A0EFBAE1AC17C69008FA1BC /* pic_pad */,
+				4A07CAB61ABEE9440091B85F /* pic_kawashi */,
 				4A07CAE81ABEEF600091B85F /* JSTileMap */,
 				4A07CAB41ABEC5B70091B85F /* Library */,
-				4A07CAB61ABEE9440091B85F /* pic_kawashi */,
 				4A07CA811ABEC3400091B85F /* Supporting Files */,
 				4A07CAA71ABEC3C00091B85F /* KawashiKun-Bridging-Header.h */,
+				3792E75D1BD68DEF00F3462A /* Wwise */,
 			);
 			path = KawashiKun;
 			sourceTree = "<group>";
@@ -379,34 +638,71 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A07CAD41ABEE9440091B85F /* jump-5.gif in Resources */,
+				37E77A2B1BDFD1DE00902AF0 /* Gravel.txt in Resources */,
 				4A07CAD11ABEE9440091B85F /* jump-2.gif in Resources */,
+				37E77A231BDFD1DE00902AF0 /* Car.bnk in Resources */,
 				4A07CAD01ABEE9440091B85F /* jump-1.gif in Resources */,
+				37E77A2A1BDFD1DE00902AF0 /* Gravel.bnk in Resources */,
 				4A07CADA1ABEE9440091B85F /* run-2.gif in Resources */,
+				37E77A361BDFD1DE00902AF0 /* Motion.bnk in Resources */,
 				4A07CAD31ABEE9440091B85F /* jump-4.gif in Resources */,
+				37E77A321BDFD1DE00902AF0 /* Metal.bnk in Resources */,
+				37E77A271BDFD1DE00902AF0 /* English(US) in Resources */,
+				37E77A241BDFD1DE00902AF0 /* Car.txt in Resources */,
 				4A07CAD91ABEE9440091B85F /* run-1.gif in Resources */,
+				37E77A221BDFD1DE00902AF0 /* BGM.txt in Resources */,
+				3792E7C31BD68F2800F3462A /* AkMultipleFileLocation.inl in Resources */,
+				37E77A401BDFD1DE00902AF0 /* TestRSX.bnk in Resources */,
+				37E77A2C1BDFD1DE00902AF0 /* Init.bnk in Resources */,
 				4A0EFBB11AC17C69008FA1BC /* base.png in Resources */,
+				37E77A331BDFD1DE00902AF0 /* Metal.txt in Resources */,
+				37E77A421BDFD1DE00902AF0 /* Wood.bnk in Resources */,
 				4A07CAD61ABEE9440091B85F /* jump-7.gif in Resources */,
 				4A0EFBB21AC17C69008FA1BC /* head.png in Resources */,
+				37E77A261BDFD1DE00902AF0 /* Dirt.txt in Resources */,
 				4A07CADC1ABEE9440091B85F /* run-4.gif in Resources */,
 				4A0930651AC0522400FB953A /* stand-0.gif in Resources */,
 				4A07CA921ABEC3400091B85F /* LaunchScreen.xib in Resources */,
+				37E77A381BDFD1DE00902AF0 /* MusicCallbacks.bnk in Resources */,
 				4A07CA8F1ABEC3400091B85F /* Images.xcassets in Resources */,
 				4A07CADB1ABEE9440091B85F /* run-3.gif in Resources */,
+				37E77A3E1BDFD1DE00902AF0 /* Positioning_Demo.txt in Resources */,
 				4A0451F31B9A9AC900236727 /* Stage1_1.sks in Resources */,
 				4A07CADE1ABEE9440091B85F /* run-6.gif in Resources */,
 				4A07CAD21ABEE9440091B85F /* jump-3.gif in Resources */,
+				37E77A311BDFD1DE00902AF0 /* MarkerTest.txt in Resources */,
+				37E77A2D1BDFD1DE00902AF0 /* Init.txt in Resources */,
 				4A07CAB11ABEC4310091B85F /* platform_mapchip_ground.png in Resources */,
+				37E77A281BDFD1DE00902AF0 /* ExternalSources.bnk in Resources */,
+				37E77A351BDFD1DE00902AF0 /* Microphone.txt in Resources */,
 				4A07CAD71ABEE9440091B85F /* jump-8.gif in Resources */,
 				4A07CAE01ABEE9440091B85F /* run-8.gif in Resources */,
 				4AFC07661AC856FD00148BA9 /* GameScene.sks in Resources */,
 				4A0930661AC0522400FB953A /* stand-1.gif in Resources */,
 				4A07CAE11ABEE9440091B85F /* run-9.gif in Resources */,
+				37E77A3C1BDFD1DE00902AF0 /* PluginInfo.xml in Resources */,
+				37E77A301BDFD1DE00902AF0 /* MarkerTest.bnk in Resources */,
+				3792E7C11BD68F2800F3462A /* AkFilePackageLowLevelIO.inl in Resources */,
+				37E77A251BDFD1DE00902AF0 /* Dirt.bnk in Resources */,
 				4A0451EE1B9A835100236727 /* Stage1_1.tmx in Resources */,
 				4A07CACF1ABEE9440091B85F /* jump-0.gif in Resources */,
+				37E77A2E1BDFD1DE00902AF0 /* InteractiveMusic.bnk in Resources */,
 				4A44C31C1B99FD3D003A3E1C /* TitleScene.sks in Resources */,
+				37E77A3F1BDFD1DE00902AF0 /* SoundbanksInfo.xml in Resources */,
+				37E77A341BDFD1DE00902AF0 /* Microphone.bnk in Resources */,
 				4A07CA8D1ABEC3400091B85F /* Main.storyboard in Resources */,
+				37E77A291BDFD1DE00902AF0 /* ExternalSources.txt in Resources */,
+				37E77A431BDFD1DE00902AF0 /* Wood.txt in Resources */,
+				37E77A411BDFD1DE00902AF0 /* TestRSX.txt in Resources */,
 				4A07CAD51ABEE9440091B85F /* jump-6.gif in Resources */,
+				37E77A3D1BDFD1DE00902AF0 /* Positioning_Demo.bnk in Resources */,
+				37E77A2F1BDFD1DE00902AF0 /* InteractiveMusic.txt in Resources */,
+				37E77A211BDFD1DE00902AF0 /* BGM.bnk in Resources */,
+				37E77A391BDFD1DE00902AF0 /* MusicCallbacks.txt in Resources */,
+				37E77A371BDFD1DE00902AF0 /* Motion.txt in Resources */,
+				37E77A3A1BDFD1DE00902AF0 /* New_SoundBank.bnk in Resources */,
 				4A07CADD1ABEE9440091B85F /* run-5.gif in Resources */,
+				37E77A3B1BDFD1DE00902AF0 /* New_SoundBank.txt in Resources */,
 				4A07CAB01ABEC4310091B85F /* ground.tmx in Resources */,
 				4A07CAD81ABEE9440091B85F /* run-0.gif in Resources */,
 				4A07CADF1ABEE9440091B85F /* run-7.gif in Resources */,
@@ -433,12 +729,22 @@
 				4A07CAED1ABEEF600091B85F /* JSTileMap.m in Sources */,
 				4AA331BA1ACC0C9E00EA562D /* TableViewController.swift in Sources */,
 				4AA331B61ACC09BA00EA562D /* TitleScene.swift in Sources */,
+				3792E7C01BD68F2800F3462A /* AkFilePackage.cpp in Sources */,
+				3792E7B11BD68F1A00F3462A /* stdafx.cpp in Sources */,
+				3792E7BE1BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp in Sources */,
+				3792E7BF1BD68F2800F3462A /* AkFileLocationBase.cpp in Sources */,
+				3792E7CB1BD68F6600F3462A /* WwiseTest.cpp in Sources */,
+				3792E7B01BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp in Sources */,
 				4A44C31B1B99E652003A3E1C /* GameView.swift in Sources */,
 				4AA331BC1ACC1BC600EA562D /* SceneViewController.swift in Sources */,
 				4A07CA881ABEC3400091B85F /* GameScene.swift in Sources */,
 				4A07CA8A1ABEC3400091B85F /* GameViewController.swift in Sources */,
+				3792E7CA1BD68F6600F3462A /* Platform.cpp in Sources */,
+				3792E7CC1BD68F6600F3462A /* WwiseTestObj.mm in Sources */,
 				4A07CAEE1ABEEF600091B85F /* LFCGzipUtility.m in Sources */,
 				4A07CA841ABEC3400091B85F /* AppDelegate.swift in Sources */,
+				3792E7C21BD68F2800F3462A /* AkFilePackageLUT.cpp in Sources */,
+				3792E7AF1BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +818,137 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3792E74A1BD68A7100F3462A /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lAkStreamMgr",
+					"-lAkSoundEngine",
+					"-lAkMusicEngine",
+					"-lAkMemoryMgr\n-lAkMusicEngine\n-lAkSoundEngine\n-lAkStreamMgr\n-lAkMemoryMgr\n-lAkMusicEngine\n-lAkSoundEngine\n-lAkStreamMgr",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Profile;
+		};
+		3792E74B1BD68A7100F3462A /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/KawashiKun/Wwise/fromSDK/samples/SoundEngine/POSIX/",
+					"$(SRCROOT)/KawashiKun/Wwise/fromSDK/samples/SoundEngine/Common/",
+					/Users/$USER/Wwise/Wwise_v2015.1.1_build_5434/SDK/include/,
+				);
+				INFOPLIST_FILE = KawashiKun/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "/Users/$USER/Wwise/Wwise_v2015.1.1_build_5434/SDK/iOS/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/lib/";
+				OTHER_LDFLAGS = (
+					"-lAkHarmonizerFX",
+					"-lAkPitchShifterFX",
+					"-lAkTimeStretchFX",
+					"-lAkStereoDelayFX",
+					"-lAkMeterFX",
+					"-lAkConvolutionReverbFX",
+					"-lAkAACDecoder",
+					"-lAkAudioInputSource",
+					"-lAkSilenceSource",
+					"-lAkSynthOne",
+					"-lAkPeakLimiterFX",
+					"-lAkRoomVerbFX",
+					"-lAkParametricEQFX",
+					"-lAkGainFX",
+					"-lAkDelayFX",
+					"-lAkMatrixReverbFX",
+					"-lAkExpanderFX",
+					"-lAkCompressorFX",
+					"-lAkSineSource",
+					"-lAkGuitarDistortionFX",
+					"-lAkTremoloFX",
+					"-lAkFlangerFX",
+					"-lAkToneSource",
+					"-lAkSoundSeedImpactFX",
+					"-lAkMemoryMgr",
+					"-lAkMusicEngine",
+					"-lMcDSPLimiterFX",
+					"-lMcDSPFutzBoxFX",
+					"-lAkSoundSeedWoosh",
+					"-lAkSoundSeedWind",
+					"-lAkSoundEngine",
+					"-lAkStreamMgr",
+					"-lAkVorbisDecoder",
+					"-lAstoundsoundExpanderFX",
+					"-lAstoundsoundFolddownFX",
+					"-lAstoundsoundRTIFX",
+					"-lAstoundsoundShared",
+					"-lCommunicationCentral",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DotInstall.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KawashiKun/KawashiKun-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Profile;
+		};
+		3792E74C1BD68A7100F3462A /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KawashiKunTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "DotInstall.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KawashiKun.app/KawashiKun";
+			};
+			name = Profile;
+		};
 		4A07CA9F1ABEC3400091B85F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -550,6 +987,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lAkStreamMgr",
+					"-lAkSoundEngine",
+					"-lAkMusicEngine",
+					"-lAkMemoryMgr\n-lAkMusicEngine\n-lAkSoundEngine\n-lAkStreamMgr\n-lAkMemoryMgr\n-lAkMusicEngine\n-lAkSoundEngine\n-lAkStreamMgr",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -577,6 +1020,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = AK_OPTIMIZED;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -585,6 +1029,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-lAkStreamMgr",
+					"-lAkSoundEngine",
+					"-lAkMusicEngine",
+					"-lAkMemoryMgr\n-lAkMusicEngine\n-lAkSoundEngine\n-lAkStreamMgr\n-lAkMemoryMgr\n-lAkMusicEngine\n-lAkSoundEngine\n-lAkStreamMgr",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -597,8 +1047,56 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/KawashiKun/Wwise/fromSDK/samples/SoundEngine/POSIX/",
+					"$(SRCROOT)/KawashiKun/Wwise/fromSDK/samples/SoundEngine/Common/",
+					/Users/$USER/Wwise/Wwise_v2015.1.1_build_5434/SDK/include/,
+				);
 				INFOPLIST_FILE = KawashiKun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "/Users/$USER/Wwise/Wwise_v2015.1.1_build_5434/SDK/iOS/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/lib/";
+				OTHER_LDFLAGS = (
+					"-lAkHarmonizerFX",
+					"-lAkPitchShifterFX",
+					"-lAkStereoDelayFX",
+					"-lAkTimeStretchFX",
+					"-lAkMeterFX",
+					"-lAkConvolutionReverbFX",
+					"-lAkAACDecoder",
+					"-lAkAudioInputSource",
+					"-lAkSilenceSource",
+					"-lAkSynthOne",
+					"-lAkPeakLimiterFX",
+					"-lAkRoomVerbFX",
+					"-lAkParametricEQFX",
+					"-lAkGainFX",
+					"-lAkDelayFX",
+					"-lAkMatrixReverbFX",
+					"-lAkExpanderFX",
+					"-lAkCompressorFX",
+					"-lAkSineSource",
+					"-lAkGuitarDistortionFX",
+					"-lAkTremoloFX",
+					"-lAkFlangerFX",
+					"-lAkToneSource",
+					"-lAkSoundSeedImpactFX",
+					"-lAkMemoryMgr",
+					"-lAkMusicEngine",
+					"-lMcDSPLimiterFX",
+					"-lMcDSPFutzBoxFX",
+					"-lAkSoundSeedWoosh",
+					"-lAkSoundSeedWind",
+					"-lAkSoundEngine",
+					"-lAkStreamMgr",
+					"-lAkVorbisDecoder",
+					"-lAstoundsoundExpanderFX",
+					"-lAstoundsoundFolddownFX",
+					"-lAstoundsoundRTIFX",
+					"-lAstoundsoundShared",
+					"-lCommunicationCentral",
+					"-lObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "DotInstall.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -614,8 +1112,54 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/KawashiKun/Wwise/fromSDK/samples/SoundEngine/POSIX/",
+					"$(SRCROOT)/KawashiKun/Wwise/fromSDK/samples/SoundEngine/Common/",
+					/Users/$USER/Wwise/Wwise_v2015.1.1_build_5434/SDK/include/,
+				);
 				INFOPLIST_FILE = KawashiKun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "/Users/$USER/Wwise/Wwise_v2015.1.1_build_5434/SDK/iOS/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/lib/";
+				OTHER_LDFLAGS = (
+					"-lAkStereoDelayFX",
+					"-lAkHarmonizerFX",
+					"-lAkPitchShifterFX",
+					"-lAkTimeStretchFX",
+					"-lAkMeterFX",
+					"-lAkConvolutionReverbFX",
+					"-lAkAACDecoder",
+					"-lAkAudioInputSource",
+					"-lAkSilenceSource",
+					"-lAkSynthOne",
+					"-lAkPeakLimiterFX",
+					"-lAkRoomVerbFX",
+					"-lAkParametricEQFX",
+					"-lAkGainFX",
+					"-lAkDelayFX",
+					"-lAkMatrixReverbFX",
+					"-lAkExpanderFX",
+					"-lAkCompressorFX",
+					"-lAkSineSource",
+					"-lAkGuitarDistortionFX",
+					"-lAkTremoloFX",
+					"-lAkFlangerFX",
+					"-lAkToneSource",
+					"-lAkSoundSeedImpactFX",
+					"-lAkMemoryMgr",
+					"-lAkMusicEngine",
+					"-lMcDSPLimiterFX",
+					"-lMcDSPFutzBoxFX",
+					"-lAkSoundSeedWoosh",
+					"-lAkSoundSeedWind",
+					"-lAkSoundEngine",
+					"-lAkStreamMgr",
+					"-lAkVorbisDecoder",
+					"-lAstoundsoundExpanderFX",
+					"-lAstoundsoundFolddownFX",
+					"-lAstoundsoundRTIFX",
+					"-lAstoundsoundShared",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "DotInstall.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -634,6 +1178,7 @@
 				);
 				INFOPLIST_FILE = KawashiKunTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "DotInstall.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KawashiKun.app/KawashiKun";
@@ -647,6 +1192,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = KawashiKunTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "DotInstall.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KawashiKun.app/KawashiKun";
@@ -660,28 +1206,31 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A07CA9F1ABEC3400091B85F /* Debug */,
+				3792E74A1BD68A7100F3462A /* Profile */,
 				4A07CAA01ABEC3400091B85F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Profile;
 		};
 		4A07CAA11ABEC3400091B85F /* Build configuration list for PBXNativeTarget "KawashiKun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A07CAA21ABEC3400091B85F /* Debug */,
+				3792E74B1BD68A7100F3462A /* Profile */,
 				4A07CAA31ABEC3400091B85F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Profile;
 		};
 		4A07CAA41ABEC3400091B85F /* Build configuration list for PBXNativeTarget "KawashiKunTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A07CAA51ABEC3400091B85F /* Debug */,
+				3792E74C1BD68A7100F3462A /* Profile */,
 				4A07CAA61ABEC3400091B85F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Profile;
 		};
 /* End XCConfigurationList section */
 	};

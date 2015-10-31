@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3593803035	PlayTITLE			\MusicCallbacks\PlayTITLE	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	752036114	MarchingBand	Y:\Wwise\Wwise_v2015.1.1_build_5434\SDK\samples\IntegrationDemo\WwiseProject\.cache\iOS\SFX\MarchingBand_82EFC8A5.wem		\Interactive Music Hierarchy\Music Callbacks\PlayTITLE\MarchingBand		288064
+

@@ -240,6 +240,11 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
             {
                 player!.xScale = 1.0
             }
+            //--------------------------------
+            // Wwise周期処理呼び出し
+            //--------------------------------
+            gl_objcpp.tmpRenderAudio()  // 20151010
+
         }
     }
     

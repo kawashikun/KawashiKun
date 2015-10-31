@@ -51,9 +51,14 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     Cellが選択された際に呼び出される.
     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let objcpp = ObjCppWwise()//20151007
+
         print("Num: \(indexPath.row)")
         print("Value: \(scenes[indexPath.row])")
         
+        // Wwise初期化ルーチン実行
+        objcpp.InitSoundEngine()//20151007
+
         presentGameView(scenes[indexPath.row] as! String)
     }
     

@@ -1,6 +1,9 @@
 
 import SpriteKit
 
+let gl_objcpp = ObjCppWwise()//Wwise: 20151007 ...ここじゃまずいが、とりあえず。TitleScene.swift、GameScene.swift でも参照する
+
+
 // プロトコル宣言
 protocol DegitalPadViewDelegate {
 	func setDegitalPadInfo(degitalPad:DegitalPadView)
@@ -25,6 +28,13 @@ class DegitalPadView: SKView {
 	var inputVector:CGPoint = CGPointMake(0, 0)			// 最終的な入力ベクトル(x=-1.0～1.0、y=-1.0～1.0)
 
 	var degitalPadRadius:CGFloat = 0.0 	// 半径
+
+    var ww_hCntFoot:UInt16    = 0           //Wwise:
+    var ww_hCntFootThre:UInt16    = 20      //Wwise:
+    var ww_hBeforeMove:UInt16 = 0           //Wwise:
+    var ww_hDiff_x:UInt16 = 0               //Wwise:
+
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,6 +100,8 @@ class DegitalPadView: SKView {
         
         self.delegate?.touchesBegan(touches, withEvent: event)
 
+        gl_objcpp.tmpGunFire()//Wwise : 20151010
+
 	}
 
 	
@@ -104,6 +116,28 @@ class DegitalPadView: SKView {
 			self.inputPos = CGPointMake(location.x - self.basePos.x,
 										location.y - self.basePos.y)
 
+            /// Wwiseトライ >>>
+            if ( ww_hBeforeMove > (UInt16)(self.basePos.x) ){
+                ww_hDiff_x = ( ww_hBeforeMove - (UInt16)(self.basePos.x))
+            }else{
+                ww_hDiff_x = ( (UInt16)(self.basePos.x) - ww_hBeforeMove)
+            }
+            if (  ww_hDiff_x > ww_hBeforeMove ){
+                ww_hCntFootThre--
+                if ( ww_hCntFootThre < 10){
+                    ww_hCntFootThre = 10
+                }
+            }else if ( ww_hDiff_x < ww_hBeforeMove  ){
+                ww_hCntFootThre++
+                if ( ww_hCntFootThre > 20){
+                    ww_hCntFootThre = 20
+                }
+                
+            }
+            ww_hBeforeMove = ww_hDiff_x
+            /// Wwiseトライ <<<
+
+            
 			// タッチ開始位置からの移動量算出
 			// 長辺の2乗 + 短辺の2乗 = 対角線の2乗
 			// 対角線 = root(長辺の2乗 + 短辺の2乗)
@@ -125,8 +159,11 @@ class DegitalPadView: SKView {
 			self.inputVector.x = self.inputPos.x / self.degitalPadRadius
 			self.inputVector.y = self.inputPos.y / self.degitalPadRadius
 
+
             print("\(self.inputVector)")
 		}
+        
+
 	}
 	
 	// タッチ終了通知
@@ -156,6 +193,14 @@ class DegitalPadView: SKView {
         if(onToutch || onToutchLast) {
             self.onToutchLast = false
             self.delegate?.setDegitalPadInfo(self)
+
+            ww_hCntFoot++
+            if ( ww_hCntFoot > ww_hCntFootThre ){
+                ww_hCntFoot = 0
+                gl_objcpp.tmpFootStep()//Wwise: 20151010 Wwise test  あとでもっと間引くこと
+            }
+
+        
         }
     }
 }
