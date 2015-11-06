@@ -8,28 +8,25 @@
 
 import SpriteKit
 
-//class GameScene: SKScene, DegitalPadViewDelegate {
-class Stage1_1: SKScene,DegitalPadViewDelegate {
-    let charName = "kawashikun"
+class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate {
     var stage:JSTileMap!
     var dPadVector:CGPoint!
     var dPadTouch:Bool = false
-    let playerspeed:CGFloat = 5.0       // 走る早さ
-    let playerjump:CGFloat = 25.0       // ジャンプ力
     var lastUpdateTimeInterval:NSTimeInterval = 1
     var world:SKNode!
     let worldName = "world"
     let cameraName = "camera"
-    
-    var motionStand:SKAction?
-    var motionJump:SKAction?
-    var motionRun:SKAction?
+    var playerInfo:PlayerInfo!
+    var bossInfo:BossInfo!
+    let bossMask:UInt32 = 0x1
     
     override func didMoveToView(view: SKView) {
         print("scene1_1: \(self.frame)")
         
         /* Setup your scene here */
         self.backgroundColor = UIColor.grayColor()
+        
+        self.physicsWorld.contactDelegate = self
         
         // world settings
         world = SKNode()
@@ -49,14 +46,13 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
         // 地面を作る
         addFloor()
         
-        // create motion
-        motionStand = makeStandMotion()
-        motionJump = makeJumpMotion()
-        motionRun = makeRunMotion()
-        
         // create player
-        let char = makeKawasikun(CGPoint(x:self.frame.size.width *        0.2,y:self.frame.size.height * 0.5), mask: 0)
-        world.addChild(char)
+        playerInfo = PlayerInfo(pos: CGPoint(x:self.frame.size.width *        0.2,y:self.frame.size.height * 0.5), mask: 0)
+        world.addChild(playerInfo.char!)
+        
+        // create boss
+        bossInfo = BossInfo(pos: CGPoint(x:self.frame.size.width *        0.3,y:self.frame.size.height * 0.5), mask: bossMask)
+        world.addChild(bossInfo.char!)
         
         // create DPad
         dPadVector = CGPoint(x: 0, y: 0)
@@ -65,147 +61,18 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         for _ in touches {
-            let player = world.childNodeWithName(charName)
+            let player = playerInfo.char
             let way:Bool = (player?.xScale > 0.0) ? true : false
             
-            self.makeSquare((player?.position)!,way:way)
-            player?.runAction(SKAction.repeatActionForever(motionRun!))
+            world.addChild(playerInfo.makeSquare((player?.position)!,way:way))
+            player?.runAction(SKAction.repeatActionForever(playerInfo.motionRun!))
         }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        // パッド削除
-        let player = world.childNodeWithName(charName)
-        
-        player?.runAction(SKAction.repeatActionForever(motionStand!))
-    }
-    
-    
-    /** キャラクター作成
-    * 引数   : pos   初期位置
-    *    	: mask  衝突判定マスク値
-    * 戻り値 : キャラクターのスプライト情報
-    */
-    func makeKawasikun(pos:CGPoint,mask:UInt32) -> SKSpriteNode!
-    {
-        /* キャラクター設定 */
-        let charactor = SKSpriteNode(imageNamed: "stand-0.gif")
-
-        charactor.position = pos
-        charactor.name = charName /* とりあえずファイル名をノードの識別子に設定 */
-        
-        /* キャラクター画像の横幅サイズを半径とした円形を判定部分に設定 */
-        charactor.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "stand-0.gif"), size: charactor.size)
-        charactor.physicsBody?.allowsRotation = false
-        charactor.physicsBody?.contactTestBitMask = mask
-        charactor.physicsBody?.friction = 1.0
-        charactor.physicsBody?.restitution = 0.0
-        
-        let action = makeStandMotion()
-        let endlessAction = SKAction.repeatActionForever(action)
-        charactor.runAction(endlessAction)
-        
-        return charactor
-    }
-    
-    /** 立ちアニメーション作成
-    * 引数   :
-    * 戻り値 :
-    */
-    func makeStandMotion() -> SKAction!
-    {
-        /* キャラクター設定 */
-        let charactor = SKSpriteNode(imageNamed: "stand-0.gif")
-        var animationFramesFarmer:[SKTexture] = []
-        
-        for(var i = 0; i <= 1; i++)
-        {
-            let name = NSString(format: "stand-%i.gif", i)
-            let texture = SKTexture(imageNamed: name as String)
-            animationFramesFarmer.append(texture)
-        }
-        
-        charactor.xScale = 1.0
-        charactor.yScale = 1.0
-        
-        let action = SKAction.animateWithTextures(animationFramesFarmer,timePerFrame:0.1)
-        
-        return action
-    }
-    
-    /** 攻撃のnode作成
-    * 引数   ：pos nodeの位置
-    *       ：way  nodeを移動させる方向(true:右、false:左)
-    * 戻り値 ：
-    */
-    func makeSquare(pos:CGPoint,way:Bool)
-    {
-        // 飛んでく何か
-        let square = SKShapeNode(rectOfSize: CGSize(width: 1.0, height: 1.0))   // 1dotの四角
-        let move:CGFloat = way ? 100.0 : -100.0                                 // 移動量
-        
-        // 初期位置
-        square.position = pos
-        
-        // アクションを作成(四角移動→移動後nodeを消す)
-        let action = SKAction.moveTo(CGPoint(x:pos.x + move,y:pos.y), duration: 0.2)
-        let remove = SKAction.removeFromParent()
-        let sequence = SKAction.sequence([action,remove])
-        
-        // node登録
-        world.addChild(square)
-        // アクション登録
-        square.runAction(sequence)
-    }
-    
-    /** ジャンプアニメーション作成
-    * 引数   :
-    * 戻り値 :
-    */
-    func makeJumpMotion() -> SKAction!
-    {
-        /* キャラクター設定 */
-        let charactor = SKSpriteNode(imageNamed: "jump-0.gif")
-        var animationFramesFarmer:[SKTexture] = []
-        
-        for(var i = 0; i <= 8; i++)
-        {
-            let name = NSString(format: "jump-%i.gif", i)
-            let texture = SKTexture(imageNamed: name as String)
-            animationFramesFarmer.append(texture)
-        }
-        
-        charactor.xScale = 1.0
-        charactor.yScale = 1.0
-        
-        let action = SKAction.animateWithTextures(animationFramesFarmer,timePerFrame:0.09)
-        
-        return action
-    }
-    
-    /** 走りアニメーション作成
-    * 引数   :
-    * 戻り値 :
-    */
-    func makeRunMotion() -> SKAction!
-    {
-        /* キャラクター設定 */
-        let charactor = SKSpriteNode(imageNamed: "run-0.gif")
-        var animationFramesFarmer:[SKTexture] = []
-        
-        for(var i = 0; i <= 9; i++)
-        {
-            let name = NSString(format: "run-%i.gif", i)
-            let texture = SKTexture(imageNamed: name as String)
-            animationFramesFarmer.append(texture)
-        }
-        
-        charactor.xScale = 1.0
-        charactor.yScale = 1.0
-        
-        let action = SKAction.animateWithTextures(animationFramesFarmer,timePerFrame:0.09)
-        
-        return action
+        // タッチが終わったら立ちアニメーションに変更
+        let player = playerInfo.char
+        player?.runAction(SKAction.repeatActionForever(playerInfo.motionStand!))
     }
     
     func addFloor() {
@@ -230,13 +97,12 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
         
         let array = objInfo.objects as NSArray
         let dic = array[0] as! NSDictionary
-//        print((array[0] as! NSDictionary)["x"]!)
+        //        print((array[0] as! NSDictionary)["x"]!)
         let x = dic["x"]!
         print(x)
     }
     
     override func update(currentTime: CFTimeInterval) {
-        let player = world.childNodeWithName(charName)
         var vector = (x:dPadVector.x,y:dPadVector.y)
         
         // 下に行き過ぎないように補正
@@ -245,33 +111,26 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
             vector.y = 0.0
         }
         
-        player!.position = CGPointMake(player!.position.x + vector.x * playerspeed,
-            player!.position.y - vector.y * playerjump)
+        // タッチされている時だけ処理
+        if(dPadTouch)
+        {
+            // キャラクターの移動
+            playerInfo.move(vector)
+            //--------------------------------
+            // Wwise周期処理呼び出し
+            //--------------------------------
+            gl_objcpp.tmpRenderAudio()  // 20151010
+            
+        }
+        
         // カメラの移動
+        let player = playerInfo.char
         let camera = world.childNodeWithName(cameraName)
         
         if((self.frame.size.width / 2) < player!.position.x) {
             camera?.parent?.position = CGPointMake(-player!.position.x + CGRectGetMidX(self.frame), camera!.parent!.position.y)
         }
         
-        // タッチされている時だけ処理
-        if(dPadTouch)
-        {
-            // キャラを反転(0のときは何もしない)
-            if(dPadVector.x < 0)
-            {
-                player!.xScale = -1.0
-            }
-            else if(0 < dPadVector.x)
-            {
-                player!.xScale = 1.0
-            }
-            //--------------------------------
-            // Wwise周期処理呼び出し
-            //--------------------------------
-            gl_objcpp.tmpRenderAudio()  // 20151010
-
-        }
     }
     
     func setDegitalPadInfo(degitalPad: DegitalPadView) {
@@ -280,5 +139,26 @@ class Stage1_1: SKScene,DegitalPadViewDelegate {
         
         // タッチ状態を取得(true:タッチされている、false:タッチされていない)
         dPadTouch = degitalPad.onToutch
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        /* AかBがBOSSの場合 */
+        if ((contact.bodyA.contactTestBitMask & 1) != 0 || (contact.bodyB.contactTestBitMask & 1) != 0)
+        {
+            /* 攻撃が当たった場合は、BOSSにダメージを与える */
+            /* BOSSに当たるとnodeは消える */
+            if ((contact.bodyA.contactTestBitMask & 2) != 0)
+            {
+                contact.bodyA.contactTestBitMask = 0
+                contact.bodyA.node?.removeFromParent()
+                bossInfo.givenDamage(playerInfo.playerAttack)
+            }
+            else if ((contact.bodyB.contactTestBitMask & 2) != 0)
+            {
+                contact.bodyB.contactTestBitMask = 0
+                contact.bodyB.node?.removeFromParent()
+                bossInfo.givenDamage(playerInfo.playerAttack)
+            }
+        }
     }
 }

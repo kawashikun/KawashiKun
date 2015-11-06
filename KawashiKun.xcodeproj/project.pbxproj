@@ -104,6 +104,8 @@
 		4A0EFBB21AC17C69008FA1BC /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A0EFBB01AC17C69008FA1BC /* head.png */; };
 		4A44C31B1B99E652003A3E1C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A44C31A1B99E652003A3E1C /* GameView.swift */; };
 		4A44C31C1B99FD3D003A3E1C /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A44C31E1B99FD3E003A3E1C /* TitleScene.sks */; };
+		4A4940251BE4E2B300318DC0 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		4A607D7D1BECFD4900A12008 /* BossInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A607D7C1BECFD4900A12008 /* BossInfo.swift */; settings = {ASSET_TAGS = (); }; };
 		4AA331B61ACC09BA00EA562D /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA331B51ACC09BA00EA562D /* TitleScene.swift */; };
 		4AA331BA1ACC0C9E00EA562D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA331B91ACC0C9E00EA562D /* TableViewController.swift */; };
 		4AA331BC1ACC1BC600EA562D /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA331BB1ACC1BC600EA562D /* SceneViewController.swift */; };
@@ -240,6 +242,8 @@
 		4A0EFBB01AC17C69008FA1BC /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
 		4A44C31A1B99E652003A3E1C /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		4A44C31D1B99FD3E003A3E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Base; path = Base.lproj/TitleScene.sks; sourceTree = "<group>"; };
+		4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
+		4A607D7C1BECFD4900A12008 /* BossInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BossInfo.swift; sourceTree = "<group>"; };
 		4AA331B51ACC09BA00EA562D /* TitleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		4AA331B91ACC0C9E00EA562D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
 		4AA331BB1ACC1BC600EA562D /* SceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
@@ -431,6 +435,8 @@
 				4A0451EF1B9A839200236727 /* Stage1_1.swift */,
 				4A07CA891ABEC3400091B85F /* GameViewController.swift */,
 				4A0EFBAC1AC176C0008FA1BC /* DegitalPadView.swift */,
+				4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */,
+				4A607D7C1BECFD4900A12008 /* BossInfo.swift */,
 				4A07CA8B1ABEC3400091B85F /* Main.storyboard */,
 				4A0A44FC1ACD6A8800F9DA55 /* Scene.storyboard */,
 				4A07CA8E1ABEC3400091B85F /* Images.xcassets */,
@@ -727,6 +733,7 @@
 				4A0451F01B9A839200236727 /* Stage1_1.swift in Sources */,
 				4A0EFBAD1AC176C0008FA1BC /* DegitalPadView.swift in Sources */,
 				4A07CAED1ABEEF600091B85F /* JSTileMap.m in Sources */,
+				4A607D7D1BECFD4900A12008 /* BossInfo.swift in Sources */,
 				4AA331BA1ACC0C9E00EA562D /* TableViewController.swift in Sources */,
 				4AA331B61ACC09BA00EA562D /* TitleScene.swift in Sources */,
 				3792E7C01BD68F2800F3462A /* AkFilePackage.cpp in Sources */,
@@ -736,6 +743,7 @@
 				3792E7CB1BD68F6600F3462A /* WwiseTest.cpp in Sources */,
 				3792E7B01BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp in Sources */,
 				4A44C31B1B99E652003A3E1C /* GameView.swift in Sources */,
+				4A4940251BE4E2B300318DC0 /* PlayerInfo.swift in Sources */,
 				4AA331BC1ACC1BC600EA562D /* SceneViewController.swift in Sources */,
 				4A07CA881ABEC3400091B85F /* GameScene.swift in Sources */,
 				4A07CA8A1ABEC3400091B85F /* GameViewController.swift in Sources */,
