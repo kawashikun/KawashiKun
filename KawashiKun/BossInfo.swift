@@ -185,7 +185,28 @@ class BossInfo {
         // ダメージを受け続けて、HPがなくなったら消える
         if(preHp <= 0)
         {
+            // 爆発してからキャラを消す
+            char?.parent?.addChild(bomb())
             char?.removeFromParent()
         }
+    }
+    
+    /* 爆破処理 */
+    func bomb () -> SKEmitterNode {
+        let path:String! = NSBundle.mainBundle().pathForResource("BombEnemy", ofType: "sks")
+        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! SKEmitterNode
+
+        // BOSSと同じ位置で爆発
+        particle.position = (char?.position)!
+        
+        // particleのもろもろの設定を行ってみます。
+        particle.numParticlesToEmit = 100 // 何個、粒を出すか。
+        particle.particleBirthRate = 200 // 一秒間に何個、粒を出すか。
+        particle.particleSpeed = 80 // 粒の速度
+        particle.xAcceleration = 0
+        particle.yAcceleration = 0 // 加速度を0にすることで、重力がないようになる。
+        
+        // 他にもいろいろあるけど、力つきた。。
+        return particle
     }
 }
