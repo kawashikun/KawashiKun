@@ -14,7 +14,7 @@ class PlayerInfo {
     let charName = "kawashikun"
     let playerspeed:CGFloat = 5.0       // 走る早さ
     let playerjump:CGFloat = 25.0       // ジャンプ力
-    let playerAttack:CGFloat = 10       // 攻撃力
+    let playerAttack:CGFloat = 5       // 攻撃力
     
     var motionStand:SKAction? = nil
     var motionJump:SKAction? = nil

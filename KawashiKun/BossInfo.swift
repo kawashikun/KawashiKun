@@ -10,11 +10,13 @@ import SpriteKit
 
 class BossInfo {
     var char:SKSpriteNode? = nil
+    var lifeGuageBase:SKSpriteNode? = nil
+    var lifeGuage:SKSpriteNode? = nil
     let charName = "Boss"
     let playerspeed:CGFloat = 5.0       // 走る早さ
     let playerjump:CGFloat = 25.0       // ジャンプ力
-    let maxHp:CGFloat = 100             // HP最大値
-    var preHp:CGFloat = 100             // 現在のHP
+    let maxLife:CGFloat = 100.0         // HP最大値
+    var preLife:CGFloat = 100.0         // 現在のHP
     
     var motionStand:SKAction? = nil
     var motionJump:SKAction? = nil
@@ -22,8 +24,23 @@ class BossInfo {
     
     init(pos:CGPoint,mask:UInt32)
     {
+        // キャラクター
         char = makeKawasikun(CGPoint(x:pos.x,y:pos.y), mask: mask)
-        
+
+        // ライフゲージベース
+        lifeGuageBase = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: preLife, height: 10))
+        lifeGuageBase?.position.x = 0
+        lifeGuageBase?.position.y = -((char?.size.height)! / 2.0) - 10
+        // キャラクターnodeと関連づけ
+        char?.addChild(lifeGuageBase!)
+
+        // ライフゲージ
+        lifeGuage = SKSpriteNode(color: UIColor.yellowColor(), size: CGSize(width: maxLife, height: 10))
+        lifeGuage?.position.x = 0
+        lifeGuage?.position.y = -((char?.size.height)! / 2.0) - 10
+        // キャラクターnodeと関連づけ
+        char?.addChild(lifeGuage!)
+
         // create motion
         motionStand = makeStandMotion()
         motionJump = makeJumpMotion()
@@ -180,10 +197,14 @@ class BossInfo {
     * 戻り値 :
     */
     func givenDamage(value:CGFloat) {
-        preHp -= value
+        preLife -= value
+        
+        // ライフゲージを現在HPに合わせて修正
+        lifeGuage?.size.width = preLife
+        lifeGuage?.position.x -= value / 2.0
         
         // ダメージを受け続けて、HPがなくなったら消える
-        if(preHp <= 0)
+        if(preLife <= 0)
         {
             // 爆発してからキャラを消す
             char?.parent?.addChild(bomb())
