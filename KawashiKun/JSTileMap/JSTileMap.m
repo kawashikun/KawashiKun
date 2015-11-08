@@ -419,19 +419,19 @@
 
 - (NSDictionary *)objectNamed:(NSString *)objectName {
 	__block NSDictionary *object = nil;
-	[self.objects enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
 		if ([[obj valueForKey:@"name"] isEqualToString:objectName]) {
 			object = obj;
 			*stop = YES;
 		}
 	}];
 	
+    [self.objects enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
 	return object;
 }
 
 - (NSArray *)objectsNamed:(NSString *)objectName {
 	NSMutableArray *objects = [NSMutableArray arrayWithCapacity:self.objects.count];
-	[self.objects enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
+    [self.objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 		if ([[obj valueForKey:@"name"] isEqualToString:objectName]) {
 			[objects addObject:obj];
 		}
