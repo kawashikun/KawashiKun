@@ -419,13 +419,13 @@
 
 - (NSDictionary *)objectNamed:(NSString *)objectName {
 	__block NSDictionary *object = nil;
+    [self.objects enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
 		if ([[obj valueForKey:@"name"] isEqualToString:objectName]) {
 			object = obj;
 			*stop = YES;
 		}
 	}];
 	
-    [self.objects enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
 	return object;
 }
 
