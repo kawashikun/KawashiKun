@@ -57,6 +57,10 @@ class GameView:SKView,ChangeSceneProtcol {
         print("gameview: \(frame)")
 
         super.init(frame: frame)
+        
+        // パッド生成
+        self.dPadView = DegitalPadView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        self.addSubview(self.dPadView)
 
         changeScene(sceneName)
     }
@@ -80,15 +84,11 @@ class GameView:SKView,ChangeSceneProtcol {
         let newScene = GameScene.unarchiveFromFile("GameScene") as? GameScene
         newScene?.changeSceneDelegate = self
 
-        // パッド生成
-        self.dPadView = DegitalPadView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         self.dPadView.delegate = newScene
 
         //scene切り替え
         let trans = SKTransition.fadeWithDuration(0.5)
         self.presentScene(newScene!,transition:trans)
-
-        self.addSubview(self.dPadView)
     }
     
     func presentStage1_1() {
@@ -96,15 +96,11 @@ class GameView:SKView,ChangeSceneProtcol {
         let newScene = Stage1_1.unarchiveFromFile("Stage1_1") as? Stage1_1
         newScene?.changeSceneDelegate = self
         
-        // パッド生成
-        self.dPadView = DegitalPadView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         self.dPadView.delegate = newScene
         
         //scene切り替え
         let trans = SKTransition.fadeWithDuration(0.5)
         self.presentScene(newScene!,transition:trans)
-
-        self.addSubview(self.dPadView)
     }
     
     func changeScene(sceneName:String) {

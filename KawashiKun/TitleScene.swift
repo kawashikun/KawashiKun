@@ -10,13 +10,10 @@ import SpriteKit
 
 class TitleScene: SKScene,ChangeSceneProtcol {
     var changeSceneDelegate:ChangeSceneProtcol!
-//    let font_name = "Hiragino Kaku Gothic ProN W3"
     let font_name = "Courier"
     let button_stage1 = "STAGE1     "
     let button_stage2 = "STAGE2     "
     let button_stage3 = "STAGE3     "
-//    let label_text = "           "
-    let label_text = "AAAAAAAAAAA"
     
     override func didMoveToView(view: SKView) {
         print("titlescene: \(self.frame)")
@@ -24,7 +21,7 @@ class TitleScene: SKScene,ChangeSceneProtcol {
         // 背景色
         self.backgroundColor = UIColor.grayColor()
         
-        // ゲームオーバーを表示
+        // タイトル画像を表示
         let bg = SKSpriteNode(imageNamed: "Kawashi_Title_Draft.png")
         bg.position = CGPoint(x: (self.frame.width/2) , y: (self.frame.height/2))
         bg.size = CGSize(width: self.frame.width, height: self.frame.height)
@@ -55,7 +52,7 @@ class TitleScene: SKScene,ChangeSceneProtcol {
         self.addChild(stage3_1Label)
     }
     
-    // 「Start」ラベルをタップしたら、GameSceneへ遷移させる。
+    // Stageラベルをタップしたら、GameSceneへ遷移させる。
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch:UITouch = touches.first! {
             let location = touch.locationInNode(self)
