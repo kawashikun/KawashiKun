@@ -50,6 +50,9 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
         // 地面を作る
         addFloor()
         
+        // オブジェクトを配置する
+        addObjects()
+        
         // create player
         playerInfo = PlayerInfo(pos: CGPoint(x:self.frame.size.width *        0.2,y:self.frame.size.height * 0.5), mask: playerMask)
         world.addChild(playerInfo.char!)
@@ -75,10 +78,10 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
         player?.runAction(SKAction.repeatActionForever(playerInfo.motionStand!))
     }
     
+    // タイルマップを生成する
     func addFloor() {
         for var a = 0; a < Int(stage.mapSize.width); a++ { //Go through every point across the tile map
             for var b = 0; b < Int(stage.mapSize.height); b++ { //Go through every point up the tile map
-//                let layerInfo:TMXLayerInfo = stage.layers.firstObject as! TMXLayerInfo //Get the first layer (you may want to pick another layer if you don't want to use the first one on the tile map)
                 for var c = 0; c < Int(stage.layers.count); c++ {
                     let layerInfo:TMXLayerInfo = (stage.layers as NSMutableArray)[c] as! TMXLayerInfo //Get the first                 
                     let point = CGPoint(x: a, y: b) //Create a point with a and b
@@ -98,35 +101,39 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
                 }
             }
         }
-        
-        // オブジェクトグループの情報を取得する方法
-        let objInfo:TMXObjectGroup = stage.objectGroups.firstObject as! TMXObjectGroup
-        
-        let array = objInfo.objects as NSArray
-        let dic = array[0] as! NSDictionary
-        //        print((array[0] as! NSDictionary)["x"]!)
-        let x = dic["x"]! as! CGFloat
-        let y = dic["y"]! as! CGFloat
-        print(x,y)
-        
-        // create boss
-        bossInfo = BossInfo(pos: CGPoint(x:x,y:y), mask: bossMask)
-
-        world.addChild(bossInfo.char!)
+    }
+    
+    // オブジェクトを配置する
+    func addObjects() {
+        // ObjectGroup検索
+        let objGroups:NSMutableArray = stage.objectGroups as NSMutableArray
+        for group in objGroups {
+            // グループの情報を取得
+            let groupInfo = (group as! TMXObjectGroup)
+            // グループ名がbossだったら
+            if(groupInfo.groupName == "boss")
+            {
+                // オブジェクトから設定取得
+                for object in groupInfo.objects {
+                    let dic = object as! NSDictionary
+                    let x = dic["x"]! as! CGFloat       // x座標
+                    let y = dic["y"]! as! CGFloat       // y座標
+                    
+                    // create boss
+                    bossInfo = BossInfo(pos: CGPoint(x:x,y:y), mask: bossMask)
+                    world.addChild(bossInfo.char!)
+                }
+            }
+        }
     }
     
     override func update(currentTime: CFTimeInterval) {
-        var vector = (x:dPadVector.x,y:dPadVector.y)
-        
-        // 下に行き過ぎないように補正
-        if(vector.y > 0.0)
-        {
-            vector.y = 0.0
-        }
+        let vector = (x:dPadVector.x,y:dPadVector.y)
         
         // タッチされている時だけ処理
         if(dPadTouch)
         {
+            print(vector)
             // キャラクターの移動
             playerInfo.move(vector)
             //--------------------------------

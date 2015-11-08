@@ -177,7 +177,17 @@ class BossInfo {
     * 引数   : vextor 移動座標
     * 戻り値 :
     */
-    func move(vector:(x:CGFloat,y:CGFloat)) {
+    func move(var vector:(x:CGFloat,y:CGFloat)) {
+        // 下に行き過ぎないように補正
+        if(vector.y > 0.0)
+        {
+            vector.y = 0.0
+        }
+        else if(vector.y < -0.45)
+        {
+            vector.y = -0.45
+        }
+        
         char?.position = CGPointMake((char?.position.x)! + vector.x * playerspeed,
             (char?.position.y)! - vector.y * playerjump)
         
