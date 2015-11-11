@@ -14,7 +14,8 @@
 @interface ObjCppWwise : NSObject
 -(void)InitSoundEngine;
 -(void)tmpRenderAudio;
--(void)tmpGunFire;
+-(void)tmpGunFire : (UInt32) bVal;
+-(void)tmpBomb : (UInt32) bVal;
 -(void)tmpFootStep;
 
 @end

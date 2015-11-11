@@ -28,9 +28,13 @@
     cpp->tmpRenderAudio();
 }
 
--(void)tmpGunFire {
-    cpp->tmpGunFire();
+-(void)tmpGunFire:(UInt32) bVal{
+    cpp->tmpGunFire(bVal);
 }
+-(void)tmpBomb:(UInt32) bVal{
+    cpp->tmpBomb(bVal);
+}
+
 -(void)tmpFootStep {
     cpp->tmpFootStep();
 }

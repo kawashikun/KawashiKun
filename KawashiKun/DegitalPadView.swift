@@ -100,7 +100,8 @@ class DegitalPadView: SKView {
         
         self.delegate?.touchesBegan(touches, withEvent: event)
 
-        gl_objcpp.tmpGunFire()//Wwise : 20151010
+        gl_objcpp.tmpGunFire( 10 )//:Wwise: 鉄砲音を 0-100の間で好みで指定してください    etsuji
+///        gl_objcpp.tmpBomb( 80 )//:Wwise: 爆発音を 0-100の間で好みで指定してください    etsuji 
 
 	}
 

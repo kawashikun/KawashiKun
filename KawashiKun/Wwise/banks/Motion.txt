@@ -1,7 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
 	452547817	Stop_All			\Default Work Unit\Stop_All	
 	679837841	DoorSliding			\Motion\DoorSliding	
+	1727945837	Bomb			\Motion\Bomb	
 	2975448509	GunFire			\Motion\GunFire	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	779418908	Guns_Ctrl			\Motions\Guns_Ctrl	0 is a light footstep and 100 is a heavy footstep.  This RTPC drives the Footstep_Weight switch
+	3551505008	Boms_Ctrl			\Motions\Boms_Ctrl	0 is a light footstep and 100 is a heavy footstep.  This RTPC drives the Footstep_Weight switch
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	102876030	GunFire	Y:\Wwise\Wwise_v2015.1.1_build_5434\SDK\samples\IntegrationDemo\WwiseProject\.cache\iOS\SFX\Shotgun_Fire_01_990DD2F7.wem		\Actor-Mixer Hierarchy\Motion\GunFire\GunFire	Audiokinetic Inc. All rights reserved. Audio content provided by Soundelux Design Music Group © 2007 Soundelux Design Music Group www.soundeluxdmg.com  The Audio Content contained in this digitally watermarked file is the property of Soundelux Design Music Group.  Your sole right with regard to this Audio Content is to listen to the Audio Content as part of this Sample Project.  This Audio Content cannot be used or modified for a commercial purpose nor for public demonstration.	48304

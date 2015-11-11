@@ -15,7 +15,8 @@ class CppWwise {
 public:
     void InitSoundEngine();
     void tmpRenderAudio();
-    void tmpGunFire();
+    void tmpGunFire(unsigned char bVal  );
+    void tmpBomb(unsigned char bVal  );
     void tmpFootStep();
 
 };

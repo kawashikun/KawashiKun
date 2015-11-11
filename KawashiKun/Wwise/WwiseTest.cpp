@@ -28,7 +28,7 @@
 static const AkGameObjectID GAME_OBJECT_INIT = 100;//暫定
 static const AkGameObjectID GAME_OBJECT_CAR = 10;//暫定
 static const AkGameObjectID GAME_OBJECT_HUMAN = 20;//暫定
-static const AkGameObjectID GAME_OBJECT_RECORDABLE = 30;//暫定
+//static const AkGameObjectID GAME_OBJECT_RECORDABLE = 30;//暫定
 static const AkGameObjectID GAME_OBJECT_MOTION = 40;//暫定
 static const AkGameObjectID GAME_OBJECT_GRAVEL = 50;//暫定
 static const AkGameObjectID GAME_OBJECT_TITLE = 60;//暫定
@@ -239,8 +239,28 @@ void CppWwise::InitSoundEngine() {
 //-------------------------------------//
 // 鉄砲音
 //-------------------------------------//
-void CppWwise::tmpGunFire() {
+void CppWwise::tmpGunFire( unsigned char bVal ) {
+
+    if ( bVal > 100){
+        bVal = 100;
+    }
+    // SetRTPCValueは、鉄砲音 の再生ピッチを変更。ピッチ変更しない場合は毎回呼び出す必要がない
+    AK::SoundEngine::SetRTPCValue(L"Guns_Ctrl", bVal, GAME_OBJECT_MOTION);
     AK::SoundEngine::PostEvent( L"GunFire", GAME_OBJECT_MOTION);
+
+}
+//-------------------------------------//
+// 鉄砲音
+//-------------------------------------//
+void CppWwise::tmpBomb( unsigned char bVal ) {
+    
+    if ( bVal > 100){
+        bVal = 100;
+    }
+    // SetRTPCValueは、再生ピッチを変更。ピッチ変更しない場合は毎回呼び出す必要がない
+    AK::SoundEngine::SetRTPCValue(L"Boms_Ctrl", bVal, GAME_OBJECT_MOTION); // Boms の再生ピッチを変更
+    AK::SoundEngine::PostEvent( L"Bomb", GAME_OBJECT_MOTION); // Bomsを再生
+    
 }
 
 //-------------------------------------//
