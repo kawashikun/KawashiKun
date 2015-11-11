@@ -13,6 +13,7 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
     var stage:JSTileMap!
     var dPadVector:CGPoint!
     var dPadTouch:Bool = false
+    var dPadTouchLast:Bool = true
     var lastUpdateTimeInterval:NSTimeInterval = 1
     var world:SKNode!
     let worldName = "world"
@@ -61,21 +62,26 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
         dPadVector = CGPoint(x: 0, y: 0)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?, degitalPad: DegitalPadView) {
         /* Called when a touch begins */
         for _ in touches {
             let player = playerInfo.char
-            let way:Bool = (player?.xScale > 0.0) ? true : false
-            
-            world.addChild(playerInfo.makeSquare((player?.position)!,way:way))
             player?.runAction(SKAction.repeatActionForever(playerInfo.motionRun!))
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?, degitalPad: DegitalPadView) {
         // タッチが終わったら立ちアニメーションに変更
         let player = playerInfo.char
         player?.runAction(SKAction.repeatActionForever(playerInfo.motionStand!))
+        
+        if degitalPad.onToutchLast {
+            let player = playerInfo.char
+            let way:Bool = (player?.xScale > 0.0) ? true : false
+            
+            world.addChild(playerInfo.makeSquare((player?.position)!,way:way))
+        }
+        
     }
     
     // タイルマップを生成する
@@ -136,11 +142,11 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
             print(vector)
             // キャラクターの移動
             playerInfo.move(vector)
+            
             //--------------------------------
             // Wwise周期処理呼び出し
             //--------------------------------
             gl_objcpp.tmpRenderAudio()  // 20151010
-            
         }
         
         // カメラの移動
@@ -159,6 +165,7 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
         
         // タッチ状態を取得(true:タッチされている、false:タッチされていない)
         dPadTouch = degitalPad.onToutch
+        dPadTouchLast = degitalPad.onToutchLast
     }
     
     func changeScene(sceneName: String) {
