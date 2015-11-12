@@ -7,8 +7,8 @@ let gl_objcpp = ObjCppWwise()//Wwise: 20151007 ...ここじゃまずいが、と
 // プロトコル宣言
 protocol DegitalPadViewDelegate {
 	func setDegitalPadInfo(degitalPad:DegitalPadView)
-    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
-    func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?)
+    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?,degitalPad:DegitalPadView)
+    func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?,degitalPad:DegitalPadView)
 }
 
 // クラス宣言
@@ -16,18 +16,21 @@ class DegitalPadView: SKView {
 	var delegate:DegitalPadViewDelegate?
     var timer:NSTimer! = nil
     var myScene:SKScene! = nil
-    
 	var padBase:SKShapeNode!		// アケコンのパッドのベース部分
 	var padHead:SKShapeNode!		// アケコンのパッドの上の部分(丸いとこ)
 	
 	var onToutch:Bool = false		// タッチされているかどうか
-    var onToutchLast:Bool = false	// タッチされているかどうか
+    var onToutchLast:Bool = true	// タッチされているかどうか
 	
 	var inputPos:CGPoint = CGPointMake(0, 0)		// 入力位置(タッチ開始位置と差分をとって入力具合を取得)
 	var basePos:CGPoint = CGPointMake(0, 0)				// タッチ開始位置
 	var inputVector:CGPoint = CGPointMake(0, 0)			// 最終的な入力ベクトル(x=-1.0～1.0、y=-1.0～1.0)
 
 	var degitalPadRadius:CGFloat = 0.0 	// 半径
+    // タイマー関連の設定
+    let tapResponseTime:NSTimeInterval = 0.15
+    var tapStartTime:NSTimeInterval = 0.0
+    var tapCurTime:NSTimeInterval = 0.0
 
     var ww_hCntFoot:UInt16    = 0           //Wwise:
     var ww_hCntFootThre:UInt16    = 20      //Wwise:
@@ -80,7 +83,8 @@ class DegitalPadView: SKView {
 			let location = touch.locationInView(self)
 
 			// タッチされている
-			self.onToutch = true
+            self.onToutch = true
+            self.onToutchLast = false
 
 			// タッチ開始位置保存
 			self.inputPos = location
@@ -97,12 +101,9 @@ class DegitalPadView: SKView {
 
         // タッチしただけの時は入力ベクトルを0に戻す
         self.inputVector = CGPoint(x:0,y:0)
-        
-        self.delegate?.touchesBegan(touches, withEvent: event)
 
-        gl_objcpp.tmpGunFire( 10 )//:Wwise: 鉄砲音を 0-100の間で好みで指定してください    etsuji
-///        gl_objcpp.tmpBomb( 80 )//:Wwise: 爆発音を 0-100の間で好みで指定してください    etsuji 
-
+        tapStartTime = NSDate.timeIntervalSinceReferenceDate()
+        self.delegate?.touchesBegan(touches, withEvent: event, degitalPad: self)
 	}
 
 	
@@ -176,11 +177,30 @@ class DegitalPadView: SKView {
         self.padBase.removeFromParent()
         self.padHead.removeFromParent()
         
-        // タッチ終了
-        self.onToutch = false
-        self.onToutchLast = true
+    tapCurTime = NSDate.timeIntervalSinceReferenceDate()
+        let diffTime = tapCurTime - tapStartTime
+        print("start:\(tapStartTime),cur:\(tapCurTime),diff:\(diffTime)")
         
-        self.delegate?.touchesEnded(touches, withEvent: event)
+        // タップ時間が短い場合は先にタッチ終了判定
+        if (0.15 < diffTime)
+        {
+            self.delegate?.touchesEnded(touches, withEvent: event, degitalPad: self)
+            
+            // タッチ終了
+            self.onToutch = false
+            self.onToutchLast = true
+        }
+        else
+        {
+            // タッチ終了
+            self.onToutch = false
+            self.onToutchLast = true
+            
+            self.delegate?.touchesEnded(touches, withEvent: event, degitalPad: self)
+            
+            gl_objcpp.tmpGunFire( 10 )//:Wwise: 鉄砲音を 0-100の間で好みで指定してください    etsuji
+            ///        gl_objcpp.tmpBomb( 80 )//:Wwise: 爆発音を 0-100の間で好みで指定してください    etsuji
+        }
 	}
     
     // タイマー開始
@@ -190,18 +210,18 @@ class DegitalPadView: SKView {
     }
     
     func onUpdate(currentTime: CFTimeInterval) {
+
         // タップされていたらデリゲートを呼ぶ
         if(onToutch || onToutchLast) {
-            self.onToutchLast = false
             self.delegate?.setDegitalPadInfo(self)
+            
+            self.onToutchLast = false
 
             ww_hCntFoot++
             if ( ww_hCntFoot > ww_hCntFootThre ){
                 ww_hCntFoot = 0
                 gl_objcpp.tmpFootStep()//Wwise: 20151010 Wwise test  あとでもっと間引くこと
             }
-
-        
         }
     }
 }

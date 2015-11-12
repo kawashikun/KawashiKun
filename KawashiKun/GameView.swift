@@ -60,7 +60,6 @@ class GameView:SKView,ChangeSceneProtcol {
         
         // パッド生成
         self.dPadView = DegitalPadView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
-        self.addSubview(self.dPadView)
 
         changeScene(sceneName)
     }
@@ -84,6 +83,11 @@ class GameView:SKView,ChangeSceneProtcol {
         let newScene = GameScene.unarchiveFromFile("GameScene") as? GameScene
         newScene?.changeSceneDelegate = self
 
+        // viewに登録されていなかったら登録する
+        if(!(self.dPadView.isDescendantOfView(self)))
+        {
+            self.addSubview(self.dPadView)
+        }
         self.dPadView.delegate = newScene
 
         //scene切り替え
@@ -96,6 +100,11 @@ class GameView:SKView,ChangeSceneProtcol {
         let newScene = Stage1_1.unarchiveFromFile("Stage1_1") as? Stage1_1
         newScene?.changeSceneDelegate = self
         
+        // viewに登録されていなかったら登録する
+        if(!(self.dPadView.isDescendantOfView(self)))
+        {
+            self.addSubview(self.dPadView)
+        }
         self.dPadView.delegate = newScene
         
         //scene切り替え

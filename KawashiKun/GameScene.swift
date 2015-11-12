@@ -65,7 +65,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         self.physicsWorld.contactDelegate = self
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?, degitalPad: DegitalPadView) {
         /* Called when a touch begins */
         
         for _ in touches {
@@ -75,7 +75,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?, degitalPad: DegitalPadView) {
         // パッド削除
         let player = world.childNodeWithName(charName)
         
