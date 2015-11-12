@@ -21,9 +21,12 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
     var playerInfo:PlayerInfo!
     var bossInfo:BossInfo!
     let bossMask:UInt32 = 0x1
+    let attackMask:UInt32 = 0x2
+    let springMask:UInt32 = 0x4
     let playerMask:UInt32 = 0x80
     let outMask:UInt32 = 0x10
     var restart:Bool = false
+    var springInfos:[HSpringInfo] = []
     
     override func didMoveToView(view: SKView) {
         print("scene1_1: \(self.frame)")
@@ -128,6 +131,22 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
                     // create boss
                     bossInfo = BossInfo(pos: CGPoint(x:x,y:y), mask: bossMask)
                     world.addChild(bossInfo.char!)
+                    print(x,y)
+                }
+            }
+            else if(groupInfo.groupName == "hspring")   // バネ追加
+            {
+                // オブジェクトから設定取得
+                for object in groupInfo.objects {
+                    let dic = object as! NSDictionary
+                    let x = dic["x"]! as! CGFloat       // x座標
+                    let y = dic["y"]! as! CGFloat       // y座標
+                    
+                    // create spring
+                    let springInfo = HSpringInfo(pos: CGPoint(x:x,y:y), mask: springMask)
+                    springInfos.append(springInfo)
+                    world.addChild(springInfo.object!)
+                    print(x,y)
                 }
             }
         }
@@ -178,13 +197,13 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
         {
             /* 攻撃が当たった場合は、BOSSにダメージを与える */
             /* BOSSに当たるとnodeは消える */
-            if ((contact.bodyA.contactTestBitMask & 2) != 0)
+            if ((contact.bodyA.contactTestBitMask & attackMask) != 0)
             {
                 contact.bodyA.contactTestBitMask = 0
                 contact.bodyA.node?.removeFromParent()
                 bossInfo.givenDamage(playerInfo.playerAttack)
             }
-            else if ((contact.bodyB.contactTestBitMask & 2) != 0)
+            else if ((contact.bodyB.contactTestBitMask & attackMask) != 0)
             {
                 contact.bodyB.contactTestBitMask = 0
                 contact.bodyB.node?.removeFromParent()
@@ -207,6 +226,31 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
                 changeScene("Stage1_1")
                 restart = true
                 print("changeB")
+            }
+            
+            /* バネに当たった場合は、吹っ飛ぶ */
+            if ((contact.bodyA.contactTestBitMask & springMask) != 0)
+            {
+                for data in springInfos {
+                    let springInfo = data
+                    
+                    // 同じノードなら跳ねる
+                    if contact.bodyA.node == springInfo.object {
+                        contact.bodyB.node?.physicsBody?.applyImpulse(springInfo.jump())
+                    }
+                }
+            }
+            else if ((contact.bodyB.contactTestBitMask & springMask) != 0)
+            {
+                for data in springInfos {
+                    let springInfo = data 
+                    
+                    // 同じノードなら跳ねる
+                    if contact.bodyB.node == springInfo.object {
+                        contact.bodyA.node?.physicsBody?.applyImpulse(springInfo.jump())
+                    }
+                    
+                }
             }
         }
     }

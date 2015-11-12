@@ -15,53 +15,53 @@
 		3792E7581BD68CD200F3462A /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E7571BD68CD200F3462A /* CoreAudio.framework */; };
 		3792E75A1BD68CD900F3462A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E7591BD68CD900F3462A /* OpenGLES.framework */; };
 		3792E75C1BD68CE300F3462A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3792E75B1BD68CE300F3462A /* QuartzCore.framework */; };
-		3792E7AF1BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7A61BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp */; settings = {ASSET_TAGS = (); }; };
-		3792E7B01BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7A81BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp */; settings = {ASSET_TAGS = (); }; };
-		3792E7B11BD68F1A00F3462A /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7AD1BD68F1A00F3462A /* stdafx.cpp */; settings = {ASSET_TAGS = (); }; };
-		3792E7BE1BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7B21BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp */; settings = {ASSET_TAGS = (); }; };
-		3792E7BF1BD68F2800F3462A /* AkFileLocationBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7B41BD68F2800F3462A /* AkFileLocationBase.cpp */; settings = {ASSET_TAGS = (); }; };
-		3792E7C01BD68F2800F3462A /* AkFilePackage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7B61BD68F2800F3462A /* AkFilePackage.cpp */; settings = {ASSET_TAGS = (); }; };
-		3792E7C11BD68F2800F3462A /* AkFilePackageLowLevelIO.inl in Resources */ = {isa = PBXBuildFile; fileRef = 3792E7B91BD68F2800F3462A /* AkFilePackageLowLevelIO.inl */; settings = {ASSET_TAGS = (); }; };
-		3792E7C21BD68F2800F3462A /* AkFilePackageLUT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7BA1BD68F2800F3462A /* AkFilePackageLUT.cpp */; settings = {ASSET_TAGS = (); }; };
-		3792E7C31BD68F2800F3462A /* AkMultipleFileLocation.inl in Resources */ = {isa = PBXBuildFile; fileRef = 3792E7BD1BD68F2800F3462A /* AkMultipleFileLocation.inl */; settings = {ASSET_TAGS = (); }; };
-		3792E7CA1BD68F6600F3462A /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7C41BD68F6600F3462A /* Platform.cpp */; settings = {ASSET_TAGS = (); }; };
-		3792E7CB1BD68F6600F3462A /* WwiseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7C71BD68F6600F3462A /* WwiseTest.cpp */; settings = {ASSET_TAGS = (); }; };
-		3792E7CC1BD68F6600F3462A /* WwiseTestObj.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7C81BD68F6600F3462A /* WwiseTestObj.mm */; settings = {ASSET_TAGS = (); }; };
-		37E77A211BDFD1DE00902AF0 /* BGM.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E779FE1BDFD1DE00902AF0 /* BGM.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A221BDFD1DE00902AF0 /* BGM.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E779FF1BDFD1DE00902AF0 /* BGM.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A231BDFD1DE00902AF0 /* Car.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A001BDFD1DE00902AF0 /* Car.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A241BDFD1DE00902AF0 /* Car.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A011BDFD1DE00902AF0 /* Car.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A251BDFD1DE00902AF0 /* Dirt.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A021BDFD1DE00902AF0 /* Dirt.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A261BDFD1DE00902AF0 /* Dirt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A031BDFD1DE00902AF0 /* Dirt.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A271BDFD1DE00902AF0 /* English(US) in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A041BDFD1DE00902AF0 /* English(US) */; settings = {ASSET_TAGS = (); }; };
-		37E77A281BDFD1DE00902AF0 /* ExternalSources.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A051BDFD1DE00902AF0 /* ExternalSources.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A291BDFD1DE00902AF0 /* ExternalSources.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A061BDFD1DE00902AF0 /* ExternalSources.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A2A1BDFD1DE00902AF0 /* Gravel.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A071BDFD1DE00902AF0 /* Gravel.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A2B1BDFD1DE00902AF0 /* Gravel.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A081BDFD1DE00902AF0 /* Gravel.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A2C1BDFD1DE00902AF0 /* Init.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A091BDFD1DE00902AF0 /* Init.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A2D1BDFD1DE00902AF0 /* Init.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0A1BDFD1DE00902AF0 /* Init.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A2E1BDFD1DE00902AF0 /* InteractiveMusic.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0B1BDFD1DE00902AF0 /* InteractiveMusic.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A2F1BDFD1DE00902AF0 /* InteractiveMusic.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0C1BDFD1DE00902AF0 /* InteractiveMusic.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A301BDFD1DE00902AF0 /* MarkerTest.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0D1BDFD1DE00902AF0 /* MarkerTest.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A311BDFD1DE00902AF0 /* MarkerTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0E1BDFD1DE00902AF0 /* MarkerTest.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A321BDFD1DE00902AF0 /* Metal.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0F1BDFD1DE00902AF0 /* Metal.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A331BDFD1DE00902AF0 /* Metal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A101BDFD1DE00902AF0 /* Metal.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A341BDFD1DE00902AF0 /* Microphone.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A111BDFD1DE00902AF0 /* Microphone.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A351BDFD1DE00902AF0 /* Microphone.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A121BDFD1DE00902AF0 /* Microphone.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A361BDFD1DE00902AF0 /* Motion.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A131BDFD1DE00902AF0 /* Motion.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A371BDFD1DE00902AF0 /* Motion.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A141BDFD1DE00902AF0 /* Motion.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A381BDFD1DE00902AF0 /* MusicCallbacks.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A151BDFD1DE00902AF0 /* MusicCallbacks.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A391BDFD1DE00902AF0 /* MusicCallbacks.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A161BDFD1DE00902AF0 /* MusicCallbacks.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A3A1BDFD1DE00902AF0 /* New_SoundBank.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A171BDFD1DE00902AF0 /* New_SoundBank.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A3B1BDFD1DE00902AF0 /* New_SoundBank.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A181BDFD1DE00902AF0 /* New_SoundBank.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A3C1BDFD1DE00902AF0 /* PluginInfo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A191BDFD1DE00902AF0 /* PluginInfo.xml */; settings = {ASSET_TAGS = (); }; };
-		37E77A3D1BDFD1DE00902AF0 /* Positioning_Demo.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1A1BDFD1DE00902AF0 /* Positioning_Demo.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A3E1BDFD1DE00902AF0 /* Positioning_Demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1B1BDFD1DE00902AF0 /* Positioning_Demo.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A3F1BDFD1DE00902AF0 /* SoundbanksInfo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1C1BDFD1DE00902AF0 /* SoundbanksInfo.xml */; settings = {ASSET_TAGS = (); }; };
-		37E77A401BDFD1DE00902AF0 /* TestRSX.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1D1BDFD1DE00902AF0 /* TestRSX.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A411BDFD1DE00902AF0 /* TestRSX.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1E1BDFD1DE00902AF0 /* TestRSX.txt */; settings = {ASSET_TAGS = (); }; };
-		37E77A421BDFD1DE00902AF0 /* Wood.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1F1BDFD1DE00902AF0 /* Wood.bnk */; settings = {ASSET_TAGS = (); }; };
-		37E77A431BDFD1DE00902AF0 /* Wood.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A201BDFD1DE00902AF0 /* Wood.txt */; settings = {ASSET_TAGS = (); }; };
+		3792E7AF1BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7A61BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp */; };
+		3792E7B01BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7A81BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp */; };
+		3792E7B11BD68F1A00F3462A /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7AD1BD68F1A00F3462A /* stdafx.cpp */; };
+		3792E7BE1BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7B21BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp */; };
+		3792E7BF1BD68F2800F3462A /* AkFileLocationBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7B41BD68F2800F3462A /* AkFileLocationBase.cpp */; };
+		3792E7C01BD68F2800F3462A /* AkFilePackage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7B61BD68F2800F3462A /* AkFilePackage.cpp */; };
+		3792E7C11BD68F2800F3462A /* AkFilePackageLowLevelIO.inl in Resources */ = {isa = PBXBuildFile; fileRef = 3792E7B91BD68F2800F3462A /* AkFilePackageLowLevelIO.inl */; };
+		3792E7C21BD68F2800F3462A /* AkFilePackageLUT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7BA1BD68F2800F3462A /* AkFilePackageLUT.cpp */; };
+		3792E7C31BD68F2800F3462A /* AkMultipleFileLocation.inl in Resources */ = {isa = PBXBuildFile; fileRef = 3792E7BD1BD68F2800F3462A /* AkMultipleFileLocation.inl */; };
+		3792E7CA1BD68F6600F3462A /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7C41BD68F6600F3462A /* Platform.cpp */; };
+		3792E7CB1BD68F6600F3462A /* WwiseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7C71BD68F6600F3462A /* WwiseTest.cpp */; };
+		3792E7CC1BD68F6600F3462A /* WwiseTestObj.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3792E7C81BD68F6600F3462A /* WwiseTestObj.mm */; };
+		37E77A211BDFD1DE00902AF0 /* BGM.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E779FE1BDFD1DE00902AF0 /* BGM.bnk */; };
+		37E77A221BDFD1DE00902AF0 /* BGM.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E779FF1BDFD1DE00902AF0 /* BGM.txt */; };
+		37E77A231BDFD1DE00902AF0 /* Car.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A001BDFD1DE00902AF0 /* Car.bnk */; };
+		37E77A241BDFD1DE00902AF0 /* Car.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A011BDFD1DE00902AF0 /* Car.txt */; };
+		37E77A251BDFD1DE00902AF0 /* Dirt.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A021BDFD1DE00902AF0 /* Dirt.bnk */; };
+		37E77A261BDFD1DE00902AF0 /* Dirt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A031BDFD1DE00902AF0 /* Dirt.txt */; };
+		37E77A271BDFD1DE00902AF0 /* English(US) in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A041BDFD1DE00902AF0 /* English(US) */; };
+		37E77A281BDFD1DE00902AF0 /* ExternalSources.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A051BDFD1DE00902AF0 /* ExternalSources.bnk */; };
+		37E77A291BDFD1DE00902AF0 /* ExternalSources.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A061BDFD1DE00902AF0 /* ExternalSources.txt */; };
+		37E77A2A1BDFD1DE00902AF0 /* Gravel.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A071BDFD1DE00902AF0 /* Gravel.bnk */; };
+		37E77A2B1BDFD1DE00902AF0 /* Gravel.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A081BDFD1DE00902AF0 /* Gravel.txt */; };
+		37E77A2C1BDFD1DE00902AF0 /* Init.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A091BDFD1DE00902AF0 /* Init.bnk */; };
+		37E77A2D1BDFD1DE00902AF0 /* Init.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0A1BDFD1DE00902AF0 /* Init.txt */; };
+		37E77A2E1BDFD1DE00902AF0 /* InteractiveMusic.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0B1BDFD1DE00902AF0 /* InteractiveMusic.bnk */; };
+		37E77A2F1BDFD1DE00902AF0 /* InteractiveMusic.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0C1BDFD1DE00902AF0 /* InteractiveMusic.txt */; };
+		37E77A301BDFD1DE00902AF0 /* MarkerTest.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0D1BDFD1DE00902AF0 /* MarkerTest.bnk */; };
+		37E77A311BDFD1DE00902AF0 /* MarkerTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0E1BDFD1DE00902AF0 /* MarkerTest.txt */; };
+		37E77A321BDFD1DE00902AF0 /* Metal.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A0F1BDFD1DE00902AF0 /* Metal.bnk */; };
+		37E77A331BDFD1DE00902AF0 /* Metal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A101BDFD1DE00902AF0 /* Metal.txt */; };
+		37E77A341BDFD1DE00902AF0 /* Microphone.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A111BDFD1DE00902AF0 /* Microphone.bnk */; };
+		37E77A351BDFD1DE00902AF0 /* Microphone.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A121BDFD1DE00902AF0 /* Microphone.txt */; };
+		37E77A361BDFD1DE00902AF0 /* Motion.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A131BDFD1DE00902AF0 /* Motion.bnk */; };
+		37E77A371BDFD1DE00902AF0 /* Motion.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A141BDFD1DE00902AF0 /* Motion.txt */; };
+		37E77A381BDFD1DE00902AF0 /* MusicCallbacks.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A151BDFD1DE00902AF0 /* MusicCallbacks.bnk */; };
+		37E77A391BDFD1DE00902AF0 /* MusicCallbacks.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A161BDFD1DE00902AF0 /* MusicCallbacks.txt */; };
+		37E77A3A1BDFD1DE00902AF0 /* New_SoundBank.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A171BDFD1DE00902AF0 /* New_SoundBank.bnk */; };
+		37E77A3B1BDFD1DE00902AF0 /* New_SoundBank.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A181BDFD1DE00902AF0 /* New_SoundBank.txt */; };
+		37E77A3C1BDFD1DE00902AF0 /* PluginInfo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A191BDFD1DE00902AF0 /* PluginInfo.xml */; };
+		37E77A3D1BDFD1DE00902AF0 /* Positioning_Demo.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1A1BDFD1DE00902AF0 /* Positioning_Demo.bnk */; };
+		37E77A3E1BDFD1DE00902AF0 /* Positioning_Demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1B1BDFD1DE00902AF0 /* Positioning_Demo.txt */; };
+		37E77A3F1BDFD1DE00902AF0 /* SoundbanksInfo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1C1BDFD1DE00902AF0 /* SoundbanksInfo.xml */; };
+		37E77A401BDFD1DE00902AF0 /* TestRSX.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1D1BDFD1DE00902AF0 /* TestRSX.bnk */; };
+		37E77A411BDFD1DE00902AF0 /* TestRSX.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1E1BDFD1DE00902AF0 /* TestRSX.txt */; };
+		37E77A421BDFD1DE00902AF0 /* Wood.bnk in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A1F1BDFD1DE00902AF0 /* Wood.bnk */; };
+		37E77A431BDFD1DE00902AF0 /* Wood.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37E77A201BDFD1DE00902AF0 /* Wood.txt */; };
 		4A0451EE1B9A835100236727 /* Stage1_1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4A0451ED1B9A835100236727 /* Stage1_1.tmx */; };
 		4A0451F01B9A839200236727 /* Stage1_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0451EF1B9A839200236727 /* Stage1_1.swift */; };
 		4A0451F31B9A9AC900236727 /* Stage1_1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A0451F51B9A9AC900236727 /* Stage1_1.sks */; };
@@ -104,10 +104,11 @@
 		4A0EFBB21AC17C69008FA1BC /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A0EFBB01AC17C69008FA1BC /* head.png */; };
 		4A44C31B1B99E652003A3E1C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A44C31A1B99E652003A3E1C /* GameView.swift */; };
 		4A44C31C1B99FD3D003A3E1C /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A44C31E1B99FD3E003A3E1C /* TitleScene.sks */; };
-		4A4940251BE4E2B300318DC0 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */; settings = {ASSET_TAGS = (); }; };
-		4A607D7D1BECFD4900A12008 /* BossInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A607D7C1BECFD4900A12008 /* BossInfo.swift */; settings = {ASSET_TAGS = (); }; };
-		4A607D841BED0B9000A12008 /* BombEnemy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A607D821BED0B9000A12008 /* BombEnemy.sks */; settings = {ASSET_TAGS = (); }; };
-		4A607D851BED0B9000A12008 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A607D831BED0B9000A12008 /* spark.png */; settings = {ASSET_TAGS = (); }; };
+		4A4940251BE4E2B300318DC0 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */; };
+		4A549C541BF4EAFE007E632B /* HSpringInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A549C531BF4EAFE007E632B /* HSpringInfo.swift */; };
+		4A607D7D1BECFD4900A12008 /* BossInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A607D7C1BECFD4900A12008 /* BossInfo.swift */; };
+		4A607D841BED0B9000A12008 /* BombEnemy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A607D821BED0B9000A12008 /* BombEnemy.sks */; };
+		4A607D851BED0B9000A12008 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A607D831BED0B9000A12008 /* spark.png */; };
 		4AA331B61ACC09BA00EA562D /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA331B51ACC09BA00EA562D /* TitleScene.swift */; };
 		4AA331BA1ACC0C9E00EA562D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA331B91ACC0C9E00EA562D /* TableViewController.swift */; };
 		4AA331BC1ACC1BC600EA562D /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA331BB1ACC1BC600EA562D /* SceneViewController.swift */; };
@@ -245,6 +246,7 @@
 		4A44C31A1B99E652003A3E1C /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		4A44C31D1B99FD3E003A3E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Base; path = Base.lproj/TitleScene.sks; sourceTree = "<group>"; };
 		4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
+		4A549C531BF4EAFE007E632B /* HSpringInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSpringInfo.swift; sourceTree = "<group>"; };
 		4A607D7C1BECFD4900A12008 /* BossInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BossInfo.swift; sourceTree = "<group>"; };
 		4A607D821BED0B9000A12008 /* BombEnemy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BombEnemy.sks; sourceTree = "<group>"; };
 		4A607D831BED0B9000A12008 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				4A0EFBAC1AC176C0008FA1BC /* DegitalPadView.swift */,
 				4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */,
 				4A607D7C1BECFD4900A12008 /* BossInfo.swift */,
+				4A549C531BF4EAFE007E632B /* HSpringInfo.swift */,
 				4A07CA8B1ABEC3400091B85F /* Main.storyboard */,
 				4A0A44FC1ACD6A8800F9DA55 /* Scene.storyboard */,
 				4A07CA8E1ABEC3400091B85F /* Images.xcassets */,
@@ -749,6 +752,7 @@
 				3792E7BE1BD68F2800F3462A /* AkDefaultLowLevelIODispatcher.cpp in Sources */,
 				3792E7BF1BD68F2800F3462A /* AkFileLocationBase.cpp in Sources */,
 				3792E7CB1BD68F6600F3462A /* WwiseTest.cpp in Sources */,
+				4A549C541BF4EAFE007E632B /* HSpringInfo.swift in Sources */,
 				3792E7B01BD68F1A00F3462A /* AkDefaultIOHookDeferred.cpp in Sources */,
 				4A44C31B1B99E652003A3E1C /* GameView.swift in Sources */,
 				4A4940251BE4E2B300318DC0 /* PlayerInfo.swift in Sources */,
