@@ -43,7 +43,7 @@ class PlayerInfo {
         charactor.position = pos
         charactor.name = charName /* とりあえずファイル名をノードの識別子に設定 */
         
-        /* キャラクター画像の横幅サイズを半径とした円形を判定部分に設定 */
+        /* スプライトの透明以外の箇所をボディに設定 */
         charactor.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "stand-0.gif"), size: charactor.size)
         charactor.physicsBody?.allowsRotation = false
         charactor.physicsBody?.contactTestBitMask = mask
@@ -179,8 +179,10 @@ class PlayerInfo {
             vector.y = -0.45
         }
         
-        char?.position = CGPointMake((char?.position.x)! + vector.x * playerspeed,
-            (char?.position.y)! - vector.y * playerjump)
+        // 位置移動
+        char?.position = CGPointMake((char?.position.x)! + vector.x * playerspeed,(char?.position.y)! - vector.y * playerjump)
+        // 移動のための力を加える
+        char?.physicsBody?.applyImpulse(CGVector(dx:vector.x / 10, dy:vector.y / 10))
         
         // キャラを反転(0のときは何もしない)
         if(vector.x < 0)

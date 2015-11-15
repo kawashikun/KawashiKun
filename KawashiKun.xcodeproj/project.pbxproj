@@ -112,6 +112,7 @@
 		4AA331B61ACC09BA00EA562D /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA331B51ACC09BA00EA562D /* TitleScene.swift */; };
 		4AA331BA1ACC0C9E00EA562D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA331B91ACC0C9E00EA562D /* TableViewController.swift */; };
 		4AA331BC1ACC1BC600EA562D /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA331BB1ACC1BC600EA562D /* SceneViewController.swift */; };
+		4AE5E48B1BF77F3300A8928F /* ThornInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5E48A1BF77F3300A8928F /* ThornInfo.swift */; };
 		4AFC07661AC856FD00148BA9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4AFC07681AC856FD00148BA9 /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +254,7 @@
 		4AA331B51ACC09BA00EA562D /* TitleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		4AA331B91ACC0C9E00EA562D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
 		4AA331BB1ACC1BC600EA562D /* SceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
+		4AE5E48A1BF77F3300A8928F /* ThornInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThornInfo.swift; sourceTree = "<group>"; };
 		4AFC07671AC856FD00148BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Base; path = Base.lproj/GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -444,6 +446,7 @@
 				4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */,
 				4A607D7C1BECFD4900A12008 /* BossInfo.swift */,
 				4A549C531BF4EAFE007E632B /* HSpringInfo.swift */,
+				4AE5E48A1BF77F3300A8928F /* ThornInfo.swift */,
 				4A07CA8B1ABEC3400091B85F /* Main.storyboard */,
 				4A0A44FC1ACD6A8800F9DA55 /* Scene.storyboard */,
 				4A07CA8E1ABEC3400091B85F /* Images.xcassets */,
@@ -759,6 +762,7 @@
 				4AA331BC1ACC1BC600EA562D /* SceneViewController.swift in Sources */,
 				4A07CA881ABEC3400091B85F /* GameScene.swift in Sources */,
 				4A07CA8A1ABEC3400091B85F /* GameViewController.swift in Sources */,
+				4AE5E48B1BF77F3300A8928F /* ThornInfo.swift in Sources */,
 				3792E7CA1BD68F6600F3462A /* Platform.cpp in Sources */,
 				3792E7CC1BD68F6600F3462A /* WwiseTestObj.mm in Sources */,
 				4A07CAEE1ABEEF600091B85F /* LFCGzipUtility.m in Sources */,

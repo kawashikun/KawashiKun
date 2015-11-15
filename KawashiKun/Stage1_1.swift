@@ -18,15 +18,17 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
     var world:SKNode!
     let worldName = "world"
     let cameraName = "camera"
-    var playerInfo:PlayerInfo!
-    var bossInfo:BossInfo!
-    let bossMask:UInt32 = 0x1
-    let attackMask:UInt32 = 0x2
-    let springMask:UInt32 = 0x4
-    let playerMask:UInt32 = 0x80
-    let outMask:UInt32 = 0x10
-    var restart:Bool = false
+    var playerInfo:PlayerInfo!      // PLAYERの情報
+    var bossInfo:BossInfo!          // BOSSの情報
+    let bossMask:UInt32 = 0x1       // BOSSのマスク値
+    let attackMask:UInt32 = 0x2     // 攻撃nodeのマスク値
+    let springMask:UInt32 = 0x4     // バネnodeのマスク値
+    let thornMask:UInt32 = 0x8      // 棘nodeのマスク値
+    let playerMask:UInt32 = 0x80    // PLAYERのマスク値
+    let outMask:UInt32 = 0x10       // 画面外に配置したnodeのマスク値
+    var restart:Bool = false        // リスタートフラグ
     var springInfos:[HSpringInfo] = []
+    var thornInfos:[ThornInfo] = []
     
     override func didMoveToView(view: SKView) {
         print("scene1_1: \(self.frame)")
@@ -100,6 +102,9 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
                         let node = layerInfo.layer.tileAtCoord(point) //I fetched a node at that point created by JSTileMap
                         node.physicsBody = SKPhysicsBody(rectangleOfSize: node.frame.size) //I added a physics body
                         node.physicsBody?.dynamic = false
+                        /* 滑る床
+                        node.physicsBody?.friction = 0.0
+                         */
                     }
                     else if gid == 15 { //My gIDs for the floor were 7 so I checked for those values
                         let node = layerInfo.layer.tileAtCoord(point) //I fetched a node at that point created by JSTileMap
@@ -149,6 +154,21 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
                     print(x,y)
                 }
             }
+            else if(groupInfo.groupName == "thorn")   // 棘追加
+            {
+                // オブジェクトから設定取得
+                for object in groupInfo.objects {
+                    let dic = object as! NSDictionary
+                    let x = dic["x"]! as! CGFloat       // x座標
+                    let y = dic["y"]! as! CGFloat       // y座標
+                    
+                    // create thorn
+                    let thornInfo = ThornInfo(pos: CGPoint(x:x,y:y), mask: thornMask)
+                    thornInfos.append(thornInfo)
+                    world.addChild(thornInfo.object!)
+                    print(x,y)
+                }
+            }
         }
     }
     
@@ -191,67 +211,102 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
         self.changeSceneDelegate.changeScene(sceneName)
     }
     
-    func didBeginContact(contact: SKPhysicsContact) {
-        /* AかBがBOSSの場合 */
-        if ((contact.bodyA.contactTestBitMask & bossMask) != 0 || (contact.bodyB.contactTestBitMask & bossMask) != 0)
+    func didBeginContact(contact: SKPhysicsContact) {        
+        // bossが存在する場合
+        if let _ = getContactNode(contact,mask:bossMask)
         {
             /* 攻撃が当たった場合は、BOSSにダメージを与える */
             /* BOSSに当たるとnodeは消える */
-            if ((contact.bodyA.contactTestBitMask & attackMask) != 0)
+            if let bodySub = getContactNode(contact,mask:attackMask)
             {
-                contact.bodyA.contactTestBitMask = 0
-                contact.bodyA.node?.removeFromParent()
-                bossInfo.givenDamage(playerInfo.playerAttack)
-            }
-            else if ((contact.bodyB.contactTestBitMask & attackMask) != 0)
-            {
-                contact.bodyB.contactTestBitMask = 0
-                contact.bodyB.node?.removeFromParent()
+                bodySub.contactTestBitMask = 0
+                bodySub.node?.removeFromParent()
                 bossInfo.givenDamage(playerInfo.playerAttack)
             }
         }
         
-        /* AかBがPlayerの場合 */
-        if ((contact.bodyA.contactTestBitMask & playerMask) != 0 || (contact.bodyB.contactTestBitMask & playerMask) != 0)
+        // playerが存在する場合
+        if let bodyMain = getContactNode(contact,mask:playerMask)
         {
-            /* 画面外のnodeに当たるとリスタート */
-            if (((contact.bodyA.contactTestBitMask & outMask) != 0) && restart == false)
+            if ((getContactNode(contact,mask:outMask) != nil) && (restart == false))    //　画面外のnode
             {
-                changeScene("Stage1_1")
+                // リスタート
                 restart = true
-                print("changeA")
-            }
-            else if (((contact.bodyB.contactTestBitMask & outMask) != 0) && restart == false)
-            {
                 changeScene("Stage1_1")
-                restart = true
-                print("changeB")
             }
-            
-            /* バネに当たった場合は、吹っ飛ぶ */
-            if ((contact.bodyA.contactTestBitMask & springMask) != 0)
+            else if let bodySub = getContactNode(contact,mask:springMask)   // バネ
             {
                 for data in springInfos {
                     let springInfo = data
                     
                     // 同じノードなら跳ねる
-                    if contact.bodyA.node == springInfo.object {
-                        contact.bodyB.node?.physicsBody?.applyImpulse(springInfo.jump())
+                    if bodySub.node == springInfo.object {
+                        springInfo.jump(bodyMain.node!)
                     }
                 }
             }
-            else if ((contact.bodyB.contactTestBitMask & springMask) != 0)
+            else if let bodySub = getContactNode(contact,mask:thornMask)   // 棘
             {
-                for data in springInfos {
-                    let springInfo = data 
+                bodySub.contactTestBitMask = 0
+                for data in thornInfos {
+                    let thornInfo = data
                     
-                    // 同じノードなら跳ねる
-                    if contact.bodyB.node == springInfo.object {
-                        contact.bodyA.node?.physicsBody?.applyImpulse(springInfo.jump())
+                    // 同じノードなら爆発
+                    if bodySub.node == thornInfo.object {
+                        thornInfo.bomb(bodyMain.node!)
+                        // 爆発が終わるぐらいの良い頃合いでシーンをリスタート
+                        timer_wait()
                     }
-                    
                 }
             }
         }
+    }
+    
+    /*
+    ビットマスクから衝突したbodyが存在するかチェック
+    戻り値 nil:該当なし nil以外:該当したbodyを返す
+    */
+    func getContactNode(contact:SKPhysicsContact,mask:UInt32) -> SKPhysicsBody? {
+        if((contact.bodyA.contactTestBitMask & mask) != 0)
+        {
+            return contact.bodyA
+        }
+        else if((contact.bodyB.contactTestBitMask & mask) != 0)
+        {
+            return contact.bodyB
+        }
+        
+        return nil
+    }
+    
+    var timer:NSTimer!
+    var msec = 0
+    
+    // waitタイマー開始
+    func timer_wait() {
+        // タイマーを作る
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "onSecWait:", userInfo: nil, repeats: true)
+    }
+    
+    // タイマー終了
+    func timer_end() {
+        // タイマーを破棄
+        timer.invalidate()
+        msec = 0
+    }
+    
+    func onSecWait(time:NSTimer)
+    {
+        let stop = 80
+        
+        if(stop <= msec) {
+            // タイマーの初期化
+            timer_end()
+            
+            // シーンを切り替え
+            changeScene("Stage1_1")
+        }
+        
+        msec++
     }
 }

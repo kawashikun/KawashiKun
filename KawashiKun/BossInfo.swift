@@ -60,7 +60,7 @@ class BossInfo {
         charactor.position = pos
         charactor.name = charName /* とりあえずファイル名をノードの識別子に設定 */
         
-        /* キャラクター画像の横幅サイズを半径とした円形を判定部分に設定 */
+        /* スプライトの透明以外の箇所をボディに設定 */
         charactor.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "stand-0.gif"), size: charactor.size)
         charactor.physicsBody?.allowsRotation = false
         charactor.physicsBody?.contactTestBitMask = mask
@@ -217,13 +217,13 @@ class BossInfo {
         if(preLife <= 0)
         {
             // 爆発してからキャラを消す
-            char?.parent?.addChild(bomb())
+            char?.parent?.addChild(createBomb())
             char?.removeFromParent()
         }
     }
     
     /* 爆破処理 */
-    func bomb () -> SKEmitterNode {
+    func createBomb () -> SKEmitterNode {
         let path:String! = NSBundle.mainBundle().pathForResource("BombEnemy", ofType: "sks")
         let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! SKEmitterNode
 

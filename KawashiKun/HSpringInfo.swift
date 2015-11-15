@@ -11,13 +11,13 @@ import SpriteKit
 class HSpringInfo {
     var object:SKSpriteNode? = nil
     let objectName = "HSpring"
-    let jumpvector:CGFloat = 2.0       // ジャンプ力
+    let jumpvector:CGFloat = 0.5       // ジャンプ力
     
     var motionJump:SKAction!
     
     init(pos:CGPoint,mask:UInt32)
     {
-        // キャラクター
+        // オブジェクト
         object = makeObject(CGPoint(x:pos.x,y:pos.y), mask: mask)
         
         // create motion
@@ -31,7 +31,7 @@ class HSpringInfo {
      */
     func makeObject(pos:CGPoint,mask:UInt32) -> SKSpriteNode!
     {
-        /* キャラクター設定 */
+        /* スプライト設定 */
         let sprite = SKSpriteNode(imageNamed: "HSpring_00.png")
         
         sprite.position = pos
@@ -39,7 +39,7 @@ class HSpringInfo {
         sprite.position.y += sprite.size.height / 2
         sprite.name = objectName /* とりあえずファイル名をノードの識別子に設定 */
         
-        /* キャラクター画像の横幅サイズを半径とした円形を判定部分に設定 */
+        /* スプライトの透明以外の箇所をボディに設定 */
         sprite.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "HSpring_00.png"), size: sprite.size)
         sprite.physicsBody?.allowsRotation = false
         sprite.physicsBody?.contactTestBitMask = mask
@@ -56,7 +56,7 @@ class HSpringInfo {
      */
     func makeJumpMotion() -> SKAction!
     {
-        /* キャラクター設定 */
+        /* スプライト設定 */
         let sprite = SKSpriteNode(imageNamed: "HSpring_00.png")
         var animationFramesFarmer:[SKTexture] = []
         
@@ -76,15 +76,16 @@ class HSpringInfo {
     }
     
     /** ぶつかってきた物体をジャンプさせる
-     * 引数   : vextor 移動座標
-     * 戻り値 : CGVector 跳ね返り値
+     * 引数   : partner ぶつかってきた相手
+     * 戻り値 :
      */
-    func jump() -> CGVector {
+    func jump(partner:SKNode) {
         let vec:CGVector = CGVector(dx: -jumpvector, dy: 0.0)
+        
+        // ぶつかってきた相手を飛ばす
+        partner.physicsBody?.applyImpulse(vec)
         
         // バネのアニメーション
         object?.runAction(motionJump)
-        
-        return vec
     }
 }
