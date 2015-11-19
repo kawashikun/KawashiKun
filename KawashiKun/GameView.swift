@@ -74,8 +74,7 @@ class GameView:SKView,ChangeSceneProtcol {
         newScene?.changeSceneDelegate = self
 
         //scene切り替え
-        let trans = SKTransition.fadeWithDuration(0.5)
-        self.presentScene(newScene!,transition:trans)
+        self.presentScene(newScene)
     }
     
     func presentGameScene() {
@@ -91,8 +90,7 @@ class GameView:SKView,ChangeSceneProtcol {
         self.dPadView.delegate = newScene
 
         //scene切り替え
-        let trans = SKTransition.fadeWithDuration(0.5)
-        self.presentScene(newScene!,transition:trans)
+        self.presentScene(newScene)
     }
     
     func presentStage1_1() {
@@ -108,8 +106,7 @@ class GameView:SKView,ChangeSceneProtcol {
         self.dPadView.delegate = newScene
         
         //scene切り替え
-        let trans = SKTransition.fadeWithDuration(0.5)
-        self.presentScene(newScene!,transition:trans)
+        self.presentScene(newScene)
     }
     
     func changeScene(sceneName:String) {

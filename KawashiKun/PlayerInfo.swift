@@ -12,8 +12,14 @@ import SpriteKit
 class PlayerInfo {
     var char:SKSpriteNode? = nil
     let charName = "kawashikun"
-    let playerspeed:CGFloat = 5.0       // 走る早さ
+#if arch(i386) || arch(x86_64)
+    // シミュレーターでのみ実行
+    let playerspeed:CGFloat = 10.0       // 走る早さ
     let playerjump:CGFloat = 25.0       // ジャンプ力
+#else
+    let playerspeed:CGFloat = 5.0       // 走る早さ
+    let playerjump:CGFloat = 15.0       // ジャンプ力
+#endif
     let playerAttack:CGFloat = 5       // 攻撃力
     
     var motionStand:SKAction? = nil
@@ -169,7 +175,15 @@ class PlayerInfo {
     * 戻り値 :
     */
     func move(var vector:(x:CGFloat,y:CGFloat)) {
+#if arch(i386) || arch(x86_64)
+        // シミュレーターでのみ実行
         // 下に行き過ぎないように補正
+        if(vector.y > 0.0)
+        {
+            vector.y = 0.0
+        }
+#else
+        // 下に行き過ぎないように補正と上に行き過ぎないように補正
         if(vector.y > 0.0)
         {
             vector.y = 0.0
@@ -178,6 +192,7 @@ class PlayerInfo {
         {
             vector.y = -0.45
         }
+#endif
         
         // 位置移動
         char?.position = CGPointMake((char?.position.x)! + vector.x * playerspeed,(char?.position.y)! - vector.y * playerjump)
