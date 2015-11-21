@@ -20,6 +20,7 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
     let cameraName = "camera"
     var playerInfo:PlayerInfo!      // PLAYERの情報
     var bossInfo:BossInfo!          // BOSSの情報
+    var lowestShape:SKShapeNode!
     let bossMask:UInt32 = 0x1       // BOSSのマスク値
     let attackMask:UInt32 = 0x2     // 攻撃nodeのマスク値
     let springMask:UInt32 = 0x4     // バネnodeのマスク値
@@ -29,6 +30,7 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
     var restart:Bool = false        // リスタートフラグ
     var springInfos:[HSpringInfo] = []
     var thornInfos:[ThornInfo] = []
+    var thornBallInfos:[ThornBallInfo] = []
     
     override func didMoveToView(view: SKView) {
         print("scene1_1: \(self.frame)")
@@ -102,19 +104,29 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
                         let node = layerInfo.layer.tileAtCoord(point) //I fetched a node at that point created by JSTileMap
                         node.physicsBody = SKPhysicsBody(rectangleOfSize: node.frame.size) //I added a physics body
                         node.physicsBody?.dynamic = false
+                        node.physicsBody?.collisionBitMask = 0
+                        node.physicsBody?.contactTestBitMask = 0
+                        
                         /* 滑る床
                         node.physicsBody?.friction = 0.0
                          */
                     }
-                    else if gid == 15 { //My gIDs for the floor were 7 so I checked for those values
-                        let node = layerInfo.layer.tileAtCoord(point) //I fetched a node at that point created by JSTileMap
-                        node.physicsBody = SKPhysicsBody(rectangleOfSize: node.frame.size) //I added a physics body
-                        node.physicsBody?.dynamic = false
-                        node.physicsBody?.contactTestBitMask = outMask
-                    }
                 }
             }
         }
+        
+        // 衝突判定用のノード
+        lowestShape = SKShapeNode(rectOfSize: CGSize(width: self.size.width*3, height: 10))
+        lowestShape.position = CGPoint(x: self.size.width*0.5, y: -20)
+        
+        // シェイプに合わせてボディ作成
+        let physicsBody = SKPhysicsBody(rectangleOfSize: lowestShape.frame.size)
+        
+        physicsBody.dynamic = false
+        physicsBody.contactTestBitMask = outMask
+        lowestShape.physicsBody = physicsBody
+        
+        world.addChild(lowestShape)
     }
     
     // オブジェクトを配置する
@@ -169,6 +181,21 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
                     print(x,y)
                 }
             }
+            else if(groupInfo.groupName == "thornball")   // 棘ボール追加
+            {
+                // オブジェクトから設定取得
+                for object in groupInfo.objects {
+                    let dic = object as! NSDictionary
+                    let x = dic["x"]! as! CGFloat       // x座標
+                    let y = dic["y"]! as! CGFloat       // y座標
+                    
+                    // create thornball
+                    let thornBallInfo = ThornBallInfo(pos: CGPoint(x:x,y:y), mask: thornMask)
+                    thornBallInfos.append(thornBallInfo)
+                    world.addChild(thornBallInfo.object!)
+                    print(x,y)
+                }
+            }
         }
     }
     
@@ -194,6 +221,7 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
         
         if((self.frame.size.width / 2) < player!.position.x) {
             camera?.parent?.position = CGPointMake(-player!.position.x + CGRectGetMidX(self.frame), camera!.parent!.position.y)
+            lowestShape.position.x = -(camera?.parent?.position.x)!
         }
         
     }

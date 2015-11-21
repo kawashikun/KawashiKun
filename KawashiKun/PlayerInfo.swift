@@ -195,9 +195,8 @@ class PlayerInfo {
 #endif
         
         // 位置移動
-        char?.position = CGPointMake((char?.position.x)! + vector.x * playerspeed,(char?.position.y)! - vector.y * playerjump)
-        // 移動のための力を加える
-        char?.physicsBody?.applyImpulse(CGVector(dx:vector.x / 10, dy:vector.y / 10))
+        let action = SKAction.moveBy(CGVector(dx: vector.x * playerspeed, dy: -vector.y * playerjump), duration: 0.01)
+        char?.runAction(action)
         
         // キャラを反転(0のときは何もしない)
         if(vector.x < 0)

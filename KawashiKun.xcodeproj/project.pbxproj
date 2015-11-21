@@ -105,6 +105,11 @@
 		4A44C31B1B99E652003A3E1C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A44C31A1B99E652003A3E1C /* GameView.swift */; };
 		4A44C31C1B99FD3D003A3E1C /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A44C31E1B99FD3E003A3E1C /* TitleScene.sks */; };
 		4A4940251BE4E2B300318DC0 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */; };
+		4A507F5E1BFFFF1A0099DE00 /* Stage1_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A507F5C1BFFFF1A0099DE00 /* Stage1_2.swift */; };
+		4A507F5F1BFFFF1A0099DE00 /* Stage1_2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4A507F5D1BFFFF1A0099DE00 /* Stage1_2.tmx */; };
+		4A507F621BFFFF4E0099DE00 /* Stage1_2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A507F601BFFFF4E0099DE00 /* Stage1_2.sks */; };
+		4A507F641C000B4E0099DE00 /* レンガ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A507F631C000B4E0099DE00 /* レンガ.png */; };
+		4A51FF6C1C00BC1F008B7571 /* ThornBallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51FF6B1C00BC1F008B7571 /* ThornBallInfo.swift */; };
 		4A549C541BF4EAFE007E632B /* HSpringInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A549C531BF4EAFE007E632B /* HSpringInfo.swift */; };
 		4A607D7D1BECFD4900A12008 /* BossInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A607D7C1BECFD4900A12008 /* BossInfo.swift */; };
 		4A607D841BED0B9000A12008 /* BombEnemy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A607D821BED0B9000A12008 /* BombEnemy.sks */; };
@@ -247,6 +252,11 @@
 		4A44C31A1B99E652003A3E1C /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		4A44C31D1B99FD3E003A3E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Base; path = Base.lproj/TitleScene.sks; sourceTree = "<group>"; };
 		4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
+		4A507F5C1BFFFF1A0099DE00 /* Stage1_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stage1_2.swift; sourceTree = "<group>"; };
+		4A507F5D1BFFFF1A0099DE00 /* Stage1_2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Stage1_2.tmx; sourceTree = "<group>"; };
+		4A507F611BFFFF4E0099DE00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Base; path = Base.lproj/Stage1_2.sks; sourceTree = "<group>"; };
+		4A507F631C000B4E0099DE00 /* レンガ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "レンガ.png"; sourceTree = "<group>"; };
+		4A51FF6B1C00BC1F008B7571 /* ThornBallInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThornBallInfo.swift; sourceTree = "<group>"; };
 		4A549C531BF4EAFE007E632B /* HSpringInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSpringInfo.swift; sourceTree = "<group>"; };
 		4A607D7C1BECFD4900A12008 /* BossInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BossInfo.swift; sourceTree = "<group>"; };
 		4A607D821BED0B9000A12008 /* BombEnemy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BombEnemy.sks; sourceTree = "<group>"; };
@@ -441,12 +451,15 @@
 				4A07CA871ABEC3400091B85F /* GameScene.swift */,
 				4A0451F51B9A9AC900236727 /* Stage1_1.sks */,
 				4A0451EF1B9A839200236727 /* Stage1_1.swift */,
+				4A507F601BFFFF4E0099DE00 /* Stage1_2.sks */,
+				4A507F5C1BFFFF1A0099DE00 /* Stage1_2.swift */,
 				4A07CA891ABEC3400091B85F /* GameViewController.swift */,
 				4A0EFBAC1AC176C0008FA1BC /* DegitalPadView.swift */,
 				4A4940241BE4E2B300318DC0 /* PlayerInfo.swift */,
 				4A607D7C1BECFD4900A12008 /* BossInfo.swift */,
 				4A549C531BF4EAFE007E632B /* HSpringInfo.swift */,
 				4AE5E48A1BF77F3300A8928F /* ThornInfo.swift */,
+				4A51FF6B1C00BC1F008B7571 /* ThornBallInfo.swift */,
 				4A07CA8B1ABEC3400091B85F /* Main.storyboard */,
 				4A0A44FC1ACD6A8800F9DA55 /* Scene.storyboard */,
 				4A07CA8E1ABEC3400091B85F /* Images.xcassets */,
@@ -468,8 +481,10 @@
 			isa = PBXGroup;
 			children = (
 				4A0451ED1B9A835100236727 /* Stage1_1.tmx */,
+				4A507F5D1BFFFF1A0099DE00 /* Stage1_2.tmx */,
 				4A07CAAE1ABEC4310091B85F /* ground.tmx */,
 				4A07CAAF1ABEC4310091B85F /* platform_mapchip_ground.png */,
+				4A507F631C000B4E0099DE00 /* レンガ.png */,
 				4A07CA821ABEC3400091B85F /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -665,6 +680,8 @@
 				37E77A361BDFD1DE00902AF0 /* Motion.bnk in Resources */,
 				4A07CAD31ABEE9440091B85F /* jump-4.gif in Resources */,
 				37E77A321BDFD1DE00902AF0 /* Metal.bnk in Resources */,
+				4A507F641C000B4E0099DE00 /* レンガ.png in Resources */,
+				4A507F5F1BFFFF1A0099DE00 /* Stage1_2.tmx in Resources */,
 				37E77A271BDFD1DE00902AF0 /* English(US) in Resources */,
 				37E77A241BDFD1DE00902AF0 /* Car.txt in Resources */,
 				4A07CAD91ABEE9440091B85F /* run-1.gif in Resources */,
@@ -681,6 +698,7 @@
 				37E77A261BDFD1DE00902AF0 /* Dirt.txt in Resources */,
 				4A07CADC1ABEE9440091B85F /* run-4.gif in Resources */,
 				4A0930651AC0522400FB953A /* stand-0.gif in Resources */,
+				4A507F621BFFFF4E0099DE00 /* Stage1_2.sks in Resources */,
 				4A07CA921ABEC3400091B85F /* LaunchScreen.xib in Resources */,
 				37E77A381BDFD1DE00902AF0 /* MusicCallbacks.bnk in Resources */,
 				4A07CA8F1ABEC3400091B85F /* Images.xcassets in Resources */,
@@ -745,6 +763,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A0451F01B9A839200236727 /* Stage1_1.swift in Sources */,
+				4A507F5E1BFFFF1A0099DE00 /* Stage1_2.swift in Sources */,
 				4A0EFBAD1AC176C0008FA1BC /* DegitalPadView.swift in Sources */,
 				4A07CAED1ABEEF600091B85F /* JSTileMap.m in Sources */,
 				4A607D7D1BECFD4900A12008 /* BossInfo.swift in Sources */,
@@ -768,6 +787,7 @@
 				4A07CAEE1ABEEF600091B85F /* LFCGzipUtility.m in Sources */,
 				4A07CA841ABEC3400091B85F /* AppDelegate.swift in Sources */,
 				3792E7C21BD68F2800F3462A /* AkFilePackageLUT.cpp in Sources */,
+				4A51FF6C1C00BC1F008B7571 /* ThornBallInfo.swift in Sources */,
 				3792E7AF1BD68F1A00F3462A /* AkDefaultIOHookBlocking.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -829,6 +849,14 @@
 				4A44C31D1B99FD3E003A3E1C /* Base */,
 			);
 			name = TitleScene.sks;
+			sourceTree = "<group>";
+		};
+		4A507F601BFFFF4E0099DE00 /* Stage1_2.sks */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A507F611BFFFF4E0099DE00 /* Base */,
+			);
+			name = Stage1_2.sks;
 			sourceTree = "<group>";
 		};
 		4AFC07681AC856FD00148BA9 /* GameScene.sks */ = {
