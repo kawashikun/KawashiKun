@@ -12,7 +12,7 @@ import SpriteKit
 
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var tableView:UITableView!
-    var scenes:NSArray = ["TitleScene","GameScene","Stage1_1"]
+    var scenes:NSArray = ["TitleScene","GameScene","Stage1_1","Stage1_2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -39,6 +39,10 @@ extension SKNode {
                 let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! Stage1_1
                 archiver.finishDecoding()
                 return scene
+            case "Stage1_2":
+                let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! Stage1_2
+                archiver.finishDecoding()
+                return scene
             default:
                 return nil
             }
@@ -109,6 +113,22 @@ class GameView:SKView,ChangeSceneProtcol {
         self.presentScene(newScene)
     }
     
+    func presentStage1_2() {
+        // シーン作成
+        let newScene = Stage1_2.unarchiveFromFile("Stage1_2") as? Stage1_2
+        newScene?.changeSceneDelegate = self
+        
+        // viewに登録されていなかったら登録する
+        if(!(self.dPadView.isDescendantOfView(self)))
+        {
+            self.addSubview(self.dPadView)
+        }
+        self.dPadView.delegate = newScene
+        
+        //scene切り替え
+        self.presentScene(newScene)
+    }
+    
     func changeScene(sceneName:String) {
         // シーン名をキーとして表示するシーンを切り替える
         switch sceneName {
@@ -120,6 +140,9 @@ class GameView:SKView,ChangeSceneProtcol {
             break
         case "Stage1_1":
             presentStage1_1()
+            break
+        case "Stage1_2":
+            presentStage1_2()
             break
         case "Score":
             break
