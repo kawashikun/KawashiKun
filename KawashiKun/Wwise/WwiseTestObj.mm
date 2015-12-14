@@ -34,6 +34,9 @@
 -(void)tmpBomb:(UInt32) bVal{
     cpp->tmpBomb(bVal);
 }
+-(void)tmpReject:(UInt32) bVal{
+    cpp->tmpReject(bVal);
+}
 
 -(void)tmpFootStep {
     cpp->tmpFootStep();

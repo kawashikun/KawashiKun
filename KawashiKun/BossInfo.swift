@@ -216,9 +216,11 @@ class BossInfo {
         // ダメージを受け続けて、HPがなくなったら消える
         if(preLife <= 0)
         {
+
             // 爆発してからキャラを消す
             char?.parent?.addChild(createBomb())
             char?.removeFromParent()
+            gl_objcpp.tmpBomb( 80 )//:Wwise: 爆発音を 0-100の間で好みで指定してください    etsuji
         }
     }
     
@@ -236,7 +238,7 @@ class BossInfo {
         particle.particleSpeed = 80 // 粒の速度
         particle.xAcceleration = 0
         particle.yAcceleration = 0 // 加速度を0にすることで、重力がないようになる。
-        
+
         // 他にもいろいろあるけど、力つきた。。
         return particle
     }

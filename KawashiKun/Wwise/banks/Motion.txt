@@ -6,6 +6,7 @@ Event	ID	Name			Wwise Object Path	Notes
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	779418908	Guns_Ctrl			\Motions\Guns_Ctrl	0 is a light footstep and 100 is a heavy footstep.  This RTPC drives the Footstep_Weight switch
+	3347216203	Door_Ctrl			\Motions\Door_Ctrl	0 is a light footstep and 100 is a heavy footstep.  This RTPC drives the Footstep_Weight switch
 	3551505008	Boms_Ctrl			\Motions\Boms_Ctrl	0 is a light footstep and 100 is a heavy footstep.  This RTPC drives the Footstep_Weight switch
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size

@@ -17,6 +17,8 @@ public:
     void tmpRenderAudio();
     void tmpGunFire(unsigned char bVal  );
     void tmpBomb(unsigned char bVal  );
+    void tmpReject(unsigned char bVal  );
+    
     void tmpFootStep();
 
 };

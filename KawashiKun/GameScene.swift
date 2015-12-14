@@ -243,7 +243,7 @@ class GameScene: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeS
             //--------------------------------
             // Wwise周期処理呼び出し
             //--------------------------------
-            gl_objcpp.tmpRenderAudio()  // 20151010
+            gl_objcpp.tmpRenderAudio()  // Wwise : etsuji
 
         }
     }

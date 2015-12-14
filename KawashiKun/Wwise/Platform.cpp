@@ -8,7 +8,7 @@
 //#include "UniversalInput.h"   //WwiseのDemoプロジェクトでは必要。
 #include <AK/Tools/Common/AkPlatformFuncs.h>
 
-// del 20151007 #include <AK/SoundEngine/Common/AkSoundEngine.h>                // Sound Engine
+// del by etsuji,  #include <AK/SoundEngine/Common/AkSoundEngine.h>                // Sound Engine
 
 
 

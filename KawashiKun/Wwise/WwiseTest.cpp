@@ -21,7 +21,7 @@
 #include <AK/SoundEngine/Common/AkSoundEngine.h>                // Sound Engine
 #include <AK/SoundEngine/Common/AkStreamMgrModule.h>            // Sound Engine
 
-#import <UIKit/UIKit.h>//20151017
+#import <UIKit/UIKit.h>
 #include "Platform.h"
 
 /// Game Object ID ( UNQとなるように数値を定義すれば良いようだ。ためしに、適当にわりふってみるか! )
@@ -146,14 +146,14 @@ void CppWwise::InitSoundEngine() {
     
     //-------------------------------------//
     // バンクファイルのディレクトリを指定
-    // ※ ローカルのある /banks/ フォルダーのパスを指定してください。・・・ちょっと面倒そうなので、いまんとこハードコーディングでよろしくです
-    //   直しました！
+    // ※ ローカルのある /banks/ フォルダーのパスを指定してください。・・・ちょっと面倒そうなので、いまんとこハードコーディングでよろしくです.etsuji
+    //   直しました！ by yamaguchi
     //-------------------------------------//
     NSString *path = [[NSBundle mainBundle] bundlePath];
     path = [path stringByAppendingString: @"/"];
     strncpy(g_szBasePath, [path UTF8String], AK_IOS_MAX_BANK_PATH);
     g_lowLevelIO.SetBasePath( AKTEXT(&g_szBasePath[0]) );
-    // ※パスの末尾に/を入れ忘れて、ひどい目にあった。20151009 etsuji
+    // ※パスの末尾に/を入れ忘れて、ひどい目にあった。 etsuji
 
     AK::StreamMgr::SetCurrentLanguage( AKTEXT("English(US)") );
 
@@ -260,6 +260,20 @@ void CppWwise::tmpBomb( unsigned char bVal ) {
     // SetRTPCValueは、再生ピッチを変更。ピッチ変更しない場合は毎回呼び出す必要がない
     AK::SoundEngine::SetRTPCValue(L"Boms_Ctrl", bVal, GAME_OBJECT_MOTION); // Boms の再生ピッチを変更
     AK::SoundEngine::PostEvent( L"Bomb", GAME_OBJECT_MOTION); // Bomsを再生
+    
+}
+
+//-------------------------------------//
+// 跳ね返り音
+//-------------------------------------//
+void CppWwise::tmpReject( unsigned char bVal ) {
+    
+    if ( bVal > 100){
+        bVal = 100;
+    }
+    // SetRTPCValueは、再生ピッチを変更。ピッチ変更しない場合は毎回呼び出す必要がない
+    AK::SoundEngine::SetRTPCValue(L"Door_Ctrl", bVal, GAME_OBJECT_MOTION); // Boms の再生ピッチを変更
+    AK::SoundEngine::PostEvent( L"DoorSliding", GAME_OBJECT_MOTION); // Bomsを再生
     
 }
 

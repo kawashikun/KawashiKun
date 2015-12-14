@@ -16,6 +16,7 @@
 -(void)tmpRenderAudio;
 -(void)tmpGunFire : (UInt32) bVal;
 -(void)tmpBomb : (UInt32) bVal;
+-(void)tmpReject : (UInt32) bVal;
 -(void)tmpFootStep;
 
 @end

@@ -3,6 +3,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	3873244457	Play_NonRecordableMusic			\Default Work Unit\Play_NonRecordableMusic	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	663670250	RecordableMusic	Y:\Wwise\Wwise_v2015.1.1_build_5434\SDK\samples\IntegrationDemo\WwiseProject\.cache\iOS\SFX\Bass160Fight3_82EFC8A5.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM Demo\RecordableMusic		216064
+	849825588	RecordableMusic	Y:\Wwise\Wwise_v2015.1.1_build_5434\SDK\samples\IntegrationDemo\WwiseProject\.cache\iOS\SFX\Bass160Fight3_1F7CCE91.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM Demo\RecordableMusic		126424
 	1028934394	NonRecordableMusic	Y:\Wwise\Wwise_v2015.1.1_build_5434\SDK\samples\IntegrationDemo\WwiseProject\.cache\iOS\SFX\Guitar_990DD2F7.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM Demo\NonRecordableMusic		1188064
 

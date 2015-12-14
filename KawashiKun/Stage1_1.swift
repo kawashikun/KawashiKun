@@ -212,7 +212,7 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
             //--------------------------------
             // Wwise周期処理呼び出し
             //--------------------------------
-            gl_objcpp.tmpRenderAudio()  // 20151010
+            gl_objcpp.tmpRenderAudio()  // Wwise :
         }
         
         // カメラの移動
@@ -270,6 +270,7 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
                     // 同じノードなら跳ねる
                     if bodySub.node == springInfo.object {
                         springInfo.jump(bodyMain.node!)
+                        gl_objcpp.tmpReject( 50 )   // Wwise 0-100
                     }
                 }
             }
@@ -282,6 +283,8 @@ class Stage1_1: SKScene,DegitalPadViewDelegate,SKPhysicsContactDelegate,ChangeSc
                     // 同じノードなら爆発
                     if bodySub.node == thornInfo.object {
                         thornInfo.bomb(bodyMain.node!)
+
+
                         // 爆発が終わるぐらいの良い頃合いでシーンをリスタート
                         timer_wait()
                     }
