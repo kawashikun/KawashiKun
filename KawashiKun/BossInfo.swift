@@ -22,6 +22,8 @@ class BossInfo {
     var motionJump:SKAction? = nil
     var motionRun:SKAction? = nil
     
+    var timer:NSTimer? = nil
+    
     init(pos:CGPoint,mask:UInt32)
     {
         // キャラクター
@@ -40,6 +42,9 @@ class BossInfo {
         lifeGuage?.position.y = -((char?.size.height)! / 2.0) - 10
         // キャラクターnodeと関連づけ
         char?.addChild(lifeGuage!)
+        
+        // タイマー
+        timer = NSTimer()
 
         // create motion
         motionStand = makeStandMotion()
@@ -55,17 +60,19 @@ class BossInfo {
     func makeKawasikun(pos:CGPoint,mask:UInt32) -> SKSpriteNode!
     {
         /* キャラクター設定 */
-        let charactor = SKSpriteNode(imageNamed: "stand-0.gif")
+        let charactor = SKSpriteNode(imageNamed: "Boss_Stop_00.png")
         
         charactor.position = pos
         charactor.name = charName /* とりあえずファイル名をノードの識別子に設定 */
         
         /* スプライトの透明以外の箇所をボディに設定 */
-        charactor.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "stand-0.gif"), size: charactor.size)
+        charactor.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Boss_Stop_00.png"), size: charactor.size)
         charactor.physicsBody?.allowsRotation = false
         charactor.physicsBody?.contactTestBitMask = mask
         charactor.physicsBody?.friction = 1.0
         charactor.physicsBody?.restitution = 0.0
+        
+        charactor.xScale = -1.0
         
         let action = makeStandMotion()
         let endlessAction = SKAction.repeatActionForever(action)
@@ -81,18 +88,14 @@ class BossInfo {
     func makeStandMotion() -> SKAction!
     {
         /* キャラクター設定 */
-        let charactor = SKSpriteNode(imageNamed: "stand-0.gif")
         var animationFramesFarmer:[SKTexture] = []
         
         for(var i = 0; i <= 1; i++)
         {
-            let name = NSString(format: "stand-%i.gif", i)
+            let name = NSString(format: "Boss_Stop_%02i.png", i)
             let texture = SKTexture(imageNamed: name as String)
             animationFramesFarmer.append(texture)
         }
-        
-        charactor.xScale = 1.0
-        charactor.yScale = 1.0
         
         let action = SKAction.animateWithTextures(animationFramesFarmer,timePerFrame:0.1)
         
@@ -130,7 +133,6 @@ class BossInfo {
     func makeJumpMotion() -> SKAction!
     {
         /* キャラクター設定 */
-        let charactor = SKSpriteNode(imageNamed: "jump-0.gif")
         var animationFramesFarmer:[SKTexture] = []
         
         for(var i = 0; i <= 8; i++)
@@ -139,9 +141,6 @@ class BossInfo {
             let texture = SKTexture(imageNamed: name as String)
             animationFramesFarmer.append(texture)
         }
-        
-        charactor.xScale = 1.0
-        charactor.yScale = 1.0
         
         let action = SKAction.animateWithTextures(animationFramesFarmer,timePerFrame:0.09)
         
@@ -155,7 +154,6 @@ class BossInfo {
     func makeRunMotion() -> SKAction!
     {
         /* キャラクター設定 */
-        let charactor = SKSpriteNode(imageNamed: "run-0.gif")
         var animationFramesFarmer:[SKTexture] = []
         
         for(var i = 0; i <= 9; i++)
@@ -164,9 +162,6 @@ class BossInfo {
             let texture = SKTexture(imageNamed: name as String)
             animationFramesFarmer.append(texture)
         }
-        
-        charactor.xScale = 1.0
-        charactor.yScale = 1.0
         
         let action = SKAction.animateWithTextures(animationFramesFarmer,timePerFrame:0.09)
         
@@ -216,7 +211,6 @@ class BossInfo {
         // ダメージを受け続けて、HPがなくなったら消える
         if(preLife <= 0)
         {
-
             // 爆発してからキャラを消す
             char?.parent?.addChild(createBomb())
             char?.removeFromParent()
