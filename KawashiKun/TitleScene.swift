@@ -11,9 +11,9 @@ import SpriteKit
 class TitleScene: SKScene,ChangeSceneProtcol {
     var changeSceneDelegate:ChangeSceneProtcol!
     let font_name = "Courier"
-    let button_stage1 = "STAGE1     "
-    let button_stage2 = "STAGE2     "
-    let button_stage3 = "STAGE3     "
+    let button_stage1 = "▪︎▪︎▪︎STAGE1▪︎▪︎▪︎"
+    let button_stage2 = "▪︎▪︎▪︎STAGE2▪︎▪︎▪︎"
+    let button_stage3 = "▪︎▪︎▪︎STAGE3▪︎▪︎▪︎"
     
     override func didMoveToView(view: SKView) {
         print("titlescene: \(self.frame)")
@@ -29,25 +29,25 @@ class TitleScene: SKScene,ChangeSceneProtcol {
         
         let stage1_1Label = SKLabelNode(fontNamed: font_name)
         stage1_1Label.text = button_stage1
-        stage1_1Label.fontSize = 36
+        stage1_1Label.fontSize = (self.frame.height * 0.096)
         stage1_1Label.fontColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
-        stage1_1Label.position = CGPoint(x: (self.frame.width/2) + 200, y: 200)
+        stage1_1Label.position = CGPoint(x: (self.frame.width * 0.794), y: (self.frame.height * (1.0 - 0.45)))
         stage1_1Label.name = button_stage1
         self.addChild(stage1_1Label)
         
         let stage2_1Label = SKLabelNode(fontNamed: font_name)
         stage2_1Label.text = button_stage2
-        stage2_1Label.fontSize = 36
+        stage2_1Label.fontSize = (self.frame.height * 0.096)
         stage2_1Label.fontColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
-        stage2_1Label.position = CGPoint(x: (self.frame.width/2) + 200, y: 164)
+        stage2_1Label.position = CGPoint(x: (self.frame.width * 0.794), y: (self.frame.height * (1.0 - 0.55)))
         stage2_1Label.name = button_stage2
         self.addChild(stage2_1Label)
         
         let stage3_1Label = SKLabelNode(fontNamed: font_name)
         stage3_1Label.text = button_stage3
-        stage3_1Label.fontSize = 36
+        stage3_1Label.fontSize = (self.frame.height * 0.096)
         stage3_1Label.fontColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
-        stage3_1Label.position = CGPoint(x: (self.frame.width/2) + 200, y: 128)
+        stage3_1Label.position = CGPoint(x: (self.frame.width * 0.794), y: (self.frame.height * (1.0 - 0.65)))
         stage3_1Label.name = button_stage3
         self.addChild(stage3_1Label)
     }
